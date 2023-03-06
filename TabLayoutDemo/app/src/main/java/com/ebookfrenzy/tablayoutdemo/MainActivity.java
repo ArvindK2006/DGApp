@@ -21,6 +21,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
