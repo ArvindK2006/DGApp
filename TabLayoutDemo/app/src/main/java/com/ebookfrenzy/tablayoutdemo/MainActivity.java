@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void configureTabLayout(){
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 4; i++){
+            //change to i < 4 when 4th tab works
             binding.tabLayout.addTab(binding.tabLayout.newTab());
         }
         final FragmentStateAdapter adapter = new TabStateAdapter(this, binding.tabLayout.getTabCount());
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case 2:
                                 tab.setText("Calendar");
+                                break;
+                            case 3:
+                                tab.setText("About DG");
                                 break;
                         }
                     }
