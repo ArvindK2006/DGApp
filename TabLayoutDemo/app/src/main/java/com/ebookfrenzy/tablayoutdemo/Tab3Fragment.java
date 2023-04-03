@@ -1,11 +1,18 @@
 package com.ebookfrenzy.tablayoutdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.ebookfrenzy.tablayoutdemo.databinding.FragmentSignupBinding;
+import com.ebookfrenzy.tablayoutdemo.databinding.FragmentTab3Binding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -13,6 +20,8 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class Tab3Fragment extends Fragment {
+
+    Button button;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,12 +61,63 @@ public class Tab3Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+      //  setContentView(R.layout.fragment_tab3);
+      /*  button = (Button) button.findViewById(R.id.signUpButton);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openSignUpActivity();
+            }
+        }); */
+    }
+
+    public void openSignUpActivity(){
+        Intent intent = new Intent(getActivity(),SignUpActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_tab3, container, false);
+
+        // When the button is clicked, the fragment_signup screen is shown
+        // however, the rest of the app is still visible and interactive
+
+        /*
+        Button btnFragment = (Button) view.findViewById(R.id.signUpButton);
+        btnFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new SignUpFragment());
+                fr.commit();
+            }
+        }); */
+
+        return view;
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab3, container, false);
+        //return inflater.inflate(R.layout.fragment_tab3, container, false);
+      /*  binding = FragmentTab3Binding.inflate(inflater, container, false);
+        binding.signUpButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SignUpFragment signUpFragment = new SignUpFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.sendEmail,SignUpFragment);
+                transaction.commit();
+            }
+        }); */
+
+        /*View v = inflater.inflate(R.layout.fragment_tab3,container,false);
+        Button btn = (Button) v.findViewById(R.id.signUpButton);
+        btn.setOnClickListener((v) -> {
+            Fragment fragment = new SignUpFragment();
+            FragmentManager fragmentManager = getChildFragmentManager();
+            fragmentManager.beginTransaction().replace(R.)
+        });*/
     }
 }

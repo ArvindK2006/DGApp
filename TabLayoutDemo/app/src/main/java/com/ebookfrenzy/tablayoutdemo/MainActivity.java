@@ -1,5 +1,6 @@
 package com.ebookfrenzy.tablayoutdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -15,12 +16,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.net.Uri;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     private AppBarConfiguration appBarConfiguration;
@@ -38,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
         configureTabLayout();
     }
 
+
     protected void configureTabLayout(){
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 5; i++){
             //change to i < 4 when 4th tab works
             binding.tabLayout.addTab(binding.tabLayout.newTab());
         }
@@ -66,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case 3:
                                 tab.setText("About DG");
+                                break;
+                            case 4:
+                                tab.setText("Sign Up");
                                 break;
                         }
                     }

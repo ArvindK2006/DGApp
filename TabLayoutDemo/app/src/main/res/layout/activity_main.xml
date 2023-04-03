@@ -7,6 +7,16 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+    <!-- // When the button is clicked, the fragment_signup screen is shown
+         // however, the rest of the app is still visible and interactive
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container">
+    </FrameLayout>
+    -->
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
