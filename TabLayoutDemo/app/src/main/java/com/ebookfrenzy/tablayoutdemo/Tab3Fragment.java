@@ -6,13 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.ebookfrenzy.tablayoutdemo.databinding.FragmentSignupBinding;
 import com.ebookfrenzy.tablayoutdemo.databinding.FragmentTab3Binding;
+//import com.sun.mail.iap.Response;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +76,59 @@ public class Tab3Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        //  TextView tv = (TextView) findViewById(R.id.text_view_result);
+
+       // String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
+   /*      String url = "https://jsonplaceholder.typicode.com/todos/1";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+
+                    //int userId = response.getInt("userId");
+                    //int id = response.getInt("id");
+                    //String title = response.getString("title");
+                    //boolean completed = response.getBoolean("completed");
+
+                    //tv.setText(userId + "\n" + id + "\n" + title + "\n" + completed);
+
+                    JSONArray jsonArray = response.getJSONArray("items");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject item = jsonArray.getJSONObject(i);
+                        String summary = item.getString("summary");
+                        String created = item.getString("created");
+
+                        DateFormat fmt;
+                        if (created.endsWith("Z")) {
+                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                        } else {
+                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                        }
+
+                        //  tv.append(summary + ", " + created + "\n\n");
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //tv.setText(response.toString());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //tv.setText("error ");
+            }
+        });
+*/
+
+       // RequestQueue requestQueue = Volley.newRequestQueue(this);
+       // requestQueue.add(jsonObjectRequest);
+
       //  setContentView(R.layout.fragment_tab3);
       /*  button = (Button) button.findViewById(R.id.signUpButton);
         button.setOnClickListener(new View.OnClickListener(){
@@ -85,6 +152,7 @@ public class Tab3Fragment extends Fragment {
 
         // When the button is clicked, the fragment_signup screen is shown
         // however, the rest of the app is still visible and interactive
+       // TextView tv = (TextView) view.findViewById(R.id.text_view_result);
 
         /*
         Button btnFragment = (Button) view.findViewById(R.id.signUpButton);
@@ -96,6 +164,63 @@ public class Tab3Fragment extends Fragment {
                 fr.commit();
             }
         }); */
+
+        String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
+
+       //String url = "https://jsonplaceholder.typicode.com/todos/1";
+        //uses this...
+      //  String url = "https://www.googleapis.com/calendar/v3/calendars/arvindrahil1@gmail.com/events?key=AIzaSyDZG1npYnrpLoaKugWo3lgycvvbZREAktg";
+
+       JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+
+                    //int userId = response.getInt("userId");
+                    //int id = response.getInt("id");
+                    //String title = response.getString("title");
+                    //boolean completed = response.getBoolean("completed");
+
+                    //tv.setText(userId + "\n" + id + "\n" + title + "\n" + completed);
+
+                    JSONArray jsonArray = response.getJSONArray("items");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject item = jsonArray.getJSONObject(i);
+                        String summary = item.getString("summary");
+                        String created = item.getString("created");
+
+                        DateFormat fmt;
+                        if (created.endsWith("Z")) {
+                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                        } else {
+                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                        }
+
+                        //  tv.append(summary + ", " + created + "\n\n");
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //tv.setText(response.toString());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //tv.setText("error ");
+            }
+        });
+       // RequestQueue requestQueue = Volley.newRequestQueue(this);
+       // requestQueue.add(jsonObjectRequest);
+
+
+
+
+
 
         return view;
 

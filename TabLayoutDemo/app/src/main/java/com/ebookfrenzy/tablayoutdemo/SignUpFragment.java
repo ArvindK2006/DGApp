@@ -128,7 +128,7 @@ public class SignUpFragment extends Fragment {
             }); */
         }
     }
-
+/*
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
@@ -169,7 +169,7 @@ public class SignUpFragment extends Fragment {
                 }
             }
         });
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -178,6 +178,65 @@ public class SignUpFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_tab2, container, false);
 
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
+
+        Button btnSend = (Button) view.findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    // here you set what you want to do when user clicks your button,
+                    // e.g. launch a new activity
+                    final String username = "raghus06@yahoo.com";
+                    final String password = "eqqkkevzohdkbaon";
+                    //String messageToSend = txtMessage.getText().toString();
+
+                    String messageToSend = "Arvind.kakanavaram@gmail.com";
+
+                    Properties props = new Properties();
+                    props.put("mail.smtp.auth", "true");
+                    //props.put("mail.smtp.starttls.enable", "true");
+                    props.put("mail.smtp.ssl.enable", "true");
+                    props.put("mail.smtp.host", "smtp.mail.yahoo.com");
+                    props.put("mail.smtp.port", "465");
+
+                    Session session = Session.getInstance(props, new javax.mail.Authenticator(){
+                        protected PasswordAuthentication getPasswordAuthentication(){
+                            return new PasswordAuthentication(username, password);
+                        }
+                    });
+
+
+                    try {
+                        //  final String username = "raghus06@yahoo.com";
+                        Message message = new MimeMessage(session);
+                        message.setFrom(new InternetAddress(username));
+                        // message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(txtEmail.getText().toString()));
+                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Arvind.kakanavaram@gmail.com"));
+                        message.setSubject("Sending email without opening gmail app");
+                        //message.setText(messageToSend);
+                        message.setText("android test");
+                        // Transport.send(message);
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    Transport.send(message);//send(message);
+                                } catch (MessagingException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }).start();
+                        //  Toast.makeText(getApplicationContext(), "email sent successfully", Toast.LENGTH_LONG).show();
+
+                    } catch (MessagingException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                } catch (Exception ex) {
+                    String msg = ex.getMessage();
+                }
+            }
+        });
         return view;
     }
 }
