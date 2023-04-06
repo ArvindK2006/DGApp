@@ -79,64 +79,8 @@ public class Tab3Fragment extends Fragment {
         //  TextView tv = (TextView) findViewById(R.id.text_view_result);
 
        // String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
-   /*      String url = "https://jsonplaceholder.typicode.com/todos/1";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
 
-                try {
-
-                    //int userId = response.getInt("userId");
-                    //int id = response.getInt("id");
-                    //String title = response.getString("title");
-                    //boolean completed = response.getBoolean("completed");
-
-                    //tv.setText(userId + "\n" + id + "\n" + title + "\n" + completed);
-
-                    JSONArray jsonArray = response.getJSONArray("items");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject item = jsonArray.getJSONObject(i);
-                        String summary = item.getString("summary");
-                        String created = item.getString("created");
-
-                        DateFormat fmt;
-                        if (created.endsWith("Z")) {
-                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-                        } else {
-                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-                        }
-
-                        //  tv.append(summary + ", " + created + "\n\n");
-
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                //tv.setText(response.toString());
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //tv.setText("error ");
-            }
-        });
-*/
-
-       // RequestQueue requestQueue = Volley.newRequestQueue(this);
-       // requestQueue.add(jsonObjectRequest);
-
-      //  setContentView(R.layout.fragment_tab3);
-      /*  button = (Button) button.findViewById(R.id.signUpButton);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                openSignUpActivity();
-            }
-        }); */
     }
 
     public void openSignUpActivity(){
@@ -154,16 +98,8 @@ public class Tab3Fragment extends Fragment {
         // however, the rest of the app is still visible and interactive
        // TextView tv = (TextView) view.findViewById(R.id.text_view_result);
 
-        /*
-        Button btnFragment = (Button) view.findViewById(R.id.signUpButton);
-        btnFragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new SignUpFragment());
-                fr.commit();
-            }
-        }); */
+
+        TextView tv = (TextView) view.findViewById(R.id.text_view_result);
 
         String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
 
@@ -197,7 +133,7 @@ public class Tab3Fragment extends Fragment {
                             fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
                         }
 
-                        //  tv.append(summary + ", " + created + "\n\n");
+                          tv.append(summary + ", " + created + "\n\n");
 
                     }
 
@@ -211,38 +147,13 @@ public class Tab3Fragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //tv.setText("error ");
+                tv.setText("error ");
             }
         });
-       // RequestQueue requestQueue = Volley.newRequestQueue(this);
-       // requestQueue.add(jsonObjectRequest);
-
-
-
-
-
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(jsonObjectRequest);
 
         return view;
 
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_tab3, container, false);
-      /*  binding = FragmentTab3Binding.inflate(inflater, container, false);
-        binding.signUpButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                SignUpFragment signUpFragment = new SignUpFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.sendEmail,SignUpFragment);
-                transaction.commit();
-            }
-        }); */
-
-        /*View v = inflater.inflate(R.layout.fragment_tab3,container,false);
-        Button btn = (Button) v.findViewById(R.id.signUpButton);
-        btn.setOnClickListener((v) -> {
-            Fragment fragment = new SignUpFragment();
-            FragmentManager fragmentManager = getChildFragmentManager();
-            fragmentManager.beginTransaction().replace(R.)
-        });*/
     }
 }
