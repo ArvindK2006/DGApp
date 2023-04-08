@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,6 +111,7 @@ public class Tab3Fragment extends Fragment {
        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+           // public void onResponse(String response) {
 
                 try {
 
@@ -121,19 +123,26 @@ public class Tab3Fragment extends Fragment {
                     //tv.setText(userId + "\n" + id + "\n" + title + "\n" + completed);
 
                     JSONArray jsonArray = response.getJSONArray("items");
+
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject item = jsonArray.getJSONObject(i);
-                        String summary = item.getString("summary");
-                        String created = item.getString("created");
+                        if (item.has("summary")) {
 
-                        DateFormat fmt;
-                        if (created.endsWith("Z")) {
-                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-                        } else {
-                            fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                            String summary = item.getString("summary");
+                            if (summary.toLowerCase(Locale.ROOT).contains("work".toLowerCase(Locale.ROOT))) {
+                                String created = item.getString("created");
+
+                                DateFormat fmt;
+                                if (created.endsWith("Z")) {
+                                    fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                                } else {
+                                    fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                                }
+
+                                tv.append(summary + ", " + created + "\n\n");
+                            }
                         }
-
-                          tv.append(summary + ", " + created + "\n\n");
+                       // tv.append( ", " + created + "\n\n");
 
                     }
 
