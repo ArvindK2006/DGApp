@@ -1,5 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="largeText">30dp</dimen>
-    <dimen name="smallTest">24dp</dimen>
+    <dimen name="titleText">30sp</dimen>
+    <dimen name="bodyText">24sp</dimen>
+    <dimen name="eventText">20sp</dimen>
+
+    <dimen name="logoWidth">390dp</dimen>
+    <dimen name="logoHeight">409dp</dimen>
 </resources>

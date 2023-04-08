@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/drawable/button_text_color.xml" value="0.259" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/activity_main.xml" value="0.2546875" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/activity_sign_up.xml" value="0.2546875" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_SignUp.xml" value="0.19157608695652173" />
@@ -10,8 +11,8 @@
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_signUp.xml" value="0.19157608695652173" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_signup.xml" value="0.3" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab1.xml" value="0.19157608695652173" />
-        <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab2.xml" value="0.2546875" />
-        <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab3.xml" value="0.2546875" />
+        <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab2.xml" value="0.1" />
+        <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab3.xml" value="0.1" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tab4.xml" value="0.2546875" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayout/TabLayoutDemo/app/src/main/res/layout/fragment_tabSignUp.xml" value="0.19157608695652173" />
         <entry key="..\:/Users/Arvind/Documents/GitHub/TabLayoutDemo/app/src/main/res/layout/activity_main.xml" value="0.3" />

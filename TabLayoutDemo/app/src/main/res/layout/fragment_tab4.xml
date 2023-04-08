@@ -8,29 +8,29 @@
     tools:context=".Tab1Fragment">
 
     <TextView
-        android:id="@+id/aboutText"
+        android:id="@+id/aboutTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/DGInfo"
-        android:gravity="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About the Forest Preserves"
-        android:textSize="30sp"
+        android:text="@string/aboutTitle"
+        android:textSize="@dimen/titleText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.095" />
+
+    <TextView
+        android:id="@+id/aboutText"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DGInfo"
+        android:textSize="@dimen/bodyText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
 </androidx.constraintlayout.widget.ConstraintLayout>

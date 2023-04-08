@@ -10,4 +10,11 @@
 
     <color name="background">#ACC683</color>
     <color name="toolbar_bg">#9DC65B</color>
+
+    <color name="green">#4CAF50</color>
+    <color name="tan">#988558</color>
+    <color name="brown">#964B00</color>
+    <color name="orange">#FF9800</color>
+    <color name="purple">#A020F0</color>
+    <color name="blue">#1CC6FD</color>
 </resources>
