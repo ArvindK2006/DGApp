@@ -32,6 +32,11 @@ import org.json.JSONException;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * Didn't need to use this fragment for the map -- you can now access the map through the tab navigation in the upper right corner
+ */
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Tab2Fragment#newInstance} factory method to
