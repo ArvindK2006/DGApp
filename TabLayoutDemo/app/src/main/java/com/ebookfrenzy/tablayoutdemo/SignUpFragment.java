@@ -130,7 +130,7 @@ public class SignUpFragment extends Fragment {
                         message.setFrom(new InternetAddress(username));
                         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
                         //message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Arvind.kakanavaram@gmail.com"));
-                        message.setSubject("Sending email without opening gmail app");
+                        message.setSubject("Thank you for signing up!");
                         message.setText(body);
                         // Transport.send(message);
                         new Thread(new Runnable() {

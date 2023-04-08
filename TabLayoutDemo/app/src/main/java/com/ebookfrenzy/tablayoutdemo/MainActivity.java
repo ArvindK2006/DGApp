@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                                 tab.setText("Home");
                                 break;
                             case 1:
-                                tab.setText("Calendar");
+                                tab.setText("Events");
                                 break;
                             case 2:
-                                tab.setText("About DG");
+                                tab.setText("About");
                                 break;
                             case 3:
                                 tab.setText("Sign Up");
