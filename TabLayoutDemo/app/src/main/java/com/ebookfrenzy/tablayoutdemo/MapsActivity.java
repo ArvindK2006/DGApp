@@ -1,21 +1,24 @@
 package com.ebookfrenzy.tablayoutdemo;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.app.ActionBar;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Gap;
@@ -27,96 +30,58 @@ import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import org.json.JSONException;
-
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Tab2Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private static final String TAG = Tab2Fragment.class.getSimpleName();
-    private static final double POLYLINE_STROKE_WIDTH_PX = 10.5;
+    CustomPolyline customPolylineObj;
+    ArrayList<CustomPolyline> customPolylineArrayList = new ArrayList<>();
+
+    private static final String TAG = MapsActivity.class.getSimpleName();
     private static final int PATTERN_DASH_LENGTH_PX = 20;
     public static final int PATTERN_GAP_LENGTH_PX = 10;
     private static final PatternItem DASH = new Dash(PATTERN_DASH_LENGTH_PX);
     public static final PatternItem GAP = new Gap(PATTERN_GAP_LENGTH_PX);
     private static final List<PatternItem> PATTERN_POLYLINE_DASHED = Arrays.asList(GAP, DASH);
+    private static final double POLYLINE_STROKE_WIDTH_PX = 10.5;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Tab2Fragment() {
-        // Required empty public constructor
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab1Fragment.
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
      */
-    // TODO: Rename and change types and number of parameters
-    public static Tab2Fragment newInstance(String param1, String param2) {
-        Tab2Fragment fragment = new Tab2Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            if (getArguments() != null) {
-                mParam1 = getArguments().getString(ARG_PARAM1);
-                mParam2 = getArguments().getString(ARG_PARAM2);
-            }
-            //SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                  //  .findFragmentById(R.id.map);
-            // mapFragment.getMapAsync(this);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tab2, container, false);
-      /*  try{
-            SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                    .findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-        } catch(Exception e) {
-            String ex = e.getMessage();
-            e.printStackTrace();
-        }*/
-
-        /*  */
-
-        return view;
-    }
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().setCompassEnabled(true);
-        mMap.getUiSettings().setTiltGesturesEnabled(true);
+    public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         mMap.setMinZoomPreference(13.0f);
@@ -131,10 +96,10 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
 
         // Add a marker in Sydney and move the camera
         LatLng middle = new LatLng(42.144, -88.069);
-        LatLng deerGrove = new LatLng(42.14384682495575, -88.06887273075864);
-        LatLng deerGroveEast = new LatLng(42.14572971060655, -88.04575745123859);
-        mMap.addMarker(new MarkerOptions().position(deerGrove).title("Deer Grove Marker"));
-        mMap.addMarker(new MarkerOptions().position(deerGroveEast).title("Deer Grove East Marker"));
+//        LatLng deerGrove = new LatLng(42.14384682495575, -88.06887273075864);
+//        LatLng deerGroveEast = new LatLng(42.14572971060655, -88.04575745123859);
+//        mMap.addMarker(new MarkerOptions().position(deerGrove).title("Deer Grove Marker"));
+//        mMap.addMarker(new MarkerOptions().position(deerGroveEast).title("Deer Grove East Marker"));
 
         float zoomLevel = 13.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(middle, zoomLevel));
@@ -143,14 +108,32 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setTiltGesturesEnabled(true);
 
-        final LatLng melbourneLocation = new LatLng(-37.813, 144.962);
-        Marker melbourne = mMap.addMarker(
+        final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
+
+        final int height = 60;
+        final int width = 60;
+
+        Bitmap a = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_water);
+        Bitmap smallMarker1 = Bitmap.createScaledBitmap(a, width, height, false);
+        BitmapDescriptor smallMarkerIcon1 = BitmapDescriptorFactory.fromBitmap(smallMarker1);
+
+        Marker deerGroveLake = mMap.addMarker(
                 new MarkerOptions()
-                        .position(melbourneLocation)
-                        .title("Melbourne")
-                        .snippet("Population: 4,137,400")
-                        //.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher_arrow))); replaced this with the line below
-                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                        .position(deerGroveLakeLocation)
+                        .title("Deer Grove Lake")
+                        .icon(smallMarkerIcon1));
+
+        final LatLng sleddingHillLocation = new LatLng(42.146534, -88.074027);
+
+        Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_sled);
+        Bitmap smallMarker2 = Bitmap.createScaledBitmap(b, width, height, false);
+        BitmapDescriptor smallMarkerIcon2 = BitmapDescriptorFactory.fromBitmap(smallMarker2);
+
+        Marker sleddingHill = mMap.addMarker(
+                new MarkerOptions()
+                        .position(sleddingHillLocation)
+                        .title("Sledding Hill")
+                        .icon(smallMarkerIcon2));
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
@@ -593,7 +576,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.145645, -88.057304),
                         new LatLng(42.145148, -88.057591)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline6.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -755,7 +738,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.142250, -88.062970)
 
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.tan)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.tan)));
         polyline9.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
 
@@ -805,7 +788,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.140220, -88.056808),
                         new LatLng(42.140325, -88.056729)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.tan)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.tan)));
         polyline10.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline11 = mMap.addPolyline(new PolylineOptions()
@@ -915,7 +898,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.141249, -88.042290),
                         new LatLng(42.141300, -88.042238)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
         polyline11.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline12 = mMap.addPolyline(new PolylineOptions()
@@ -988,7 +971,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.141439, -88.058045),
                         new LatLng(42.141417, -88.058076)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
         polyline12.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline13 = mMap.addPolyline(new PolylineOptions()
@@ -1182,7 +1165,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.143985, -88.057831),
                         new LatLng(42.143843, -88.057786)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
         polyline14.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline15 = mMap.addPolyline(new PolylineOptions()
@@ -1201,7 +1184,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.146570, -88.079851),
                         new LatLng(42.146590, -88.079728)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline15.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1212,7 +1195,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.146662, -88.081889),
                         new LatLng(42.146217, -88.081955)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline16.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1325,7 +1308,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.147581, -88.074228),
                         new LatLng(42.147589, -88.074086)
                 )
-                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.orange)));
+                .color(ContextCompat.getColor(getApplicationContext(), R.color.orange)));
         // Set listeners for click events.
         polyline18.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1820,7 +1803,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.146395, -88.077732),
                         new LatLng(42.146332, -88.077587),
                         new LatLng(42.146294, -88.077454)
-                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.purple)));
+                ).color(ContextCompat.getColor(getApplicationContext(), R.color.purple)));
         // Set listeners for click events.
         polyline22.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1842,7 +1825,7 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.145943, -88.077768),
                         new LatLng(42.145931, -88.077682),
                         new LatLng(42.145932, -88.077519)
-                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.purple)));
+                ).color(ContextCompat.getColor(getApplicationContext(), R.color.purple)));
         // Set listeners for click events.
         polyline23.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1965,9 +1948,11 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         new LatLng(42.138475, -88.065261),
                         new LatLng(42.138569, -88.065080)
 
-                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.blue)));
+                ).color(ContextCompat.getColor(getApplicationContext(), R.color.blue)));
         // Set listeners for click events.
         polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+
     }
 
     public void defaultMap(View view){
@@ -1977,5 +1962,17 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
     public void satelliteMap(View view) {
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
+
+
+
+//    @Override
+//    public void onPolylineClick(Polyline polyline) {
+//        for (int x=0; x < customPolylineArrayList.size(); x++){
+//            if(customPolylineObj.name.equalsIgnoreCase(polyline.getTag().toString())){
+//                marker = mMap.addMarker(new MarkerOptions().title(customPolylineObj.name));
+//
+//            }
+//        }
+//    }
 
 }

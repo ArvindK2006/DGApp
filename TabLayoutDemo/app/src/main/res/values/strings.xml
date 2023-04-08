@@ -311,4 +311,5 @@
         recognized by the Illinois Nature Preserves Commission as some of the highest quality
         natural areas in the state. </string>
     <string name="aboutTitle">About the Forest Preserves</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
