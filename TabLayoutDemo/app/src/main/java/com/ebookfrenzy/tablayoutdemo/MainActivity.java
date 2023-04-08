@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     protected void configureTabLayout(){
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 4; i++){
             //change to i < 4 when 4th tab works
             binding.tabLayout.addTab(binding.tabLayout.newTab());
         }
@@ -69,15 +69,12 @@ public class MainActivity extends AppCompatActivity {
                                 tab.setText("Home");
                                 break;
                             case 1:
-                                tab.setText("Map");
-                                break;
-                            case 2:
                                 tab.setText("Calendar");
                                 break;
-                            case 3:
+                            case 2:
                                 tab.setText("About DG");
                                 break;
-                            case 4:
+                            case 3:
                                 tab.setText("Sign Up");
                                 break;
                         }
