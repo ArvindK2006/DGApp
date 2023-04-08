@@ -26,6 +26,8 @@ import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import org.json.JSONException;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -80,14 +82,14 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+            super.onCreate(savedInstanceState);
+            if (getArguments() != null) {
+                mParam1 = getArguments().getString(ARG_PARAM1);
+                mParam2 = getArguments().getString(ARG_PARAM2);
+            }
+            //SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
+                  //  .findFragmentById(R.id.map);
+            // mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -95,10 +97,16 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
+      /*  try{
+            SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        } catch(Exception e) {
+            String ex = e.getMessage();
+            e.printStackTrace();
+        }*/
 
-        /* SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this); */
+        /*  */
 
         return view;
     }
@@ -1956,5 +1964,12 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback {
                 ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.blue)));
         // Set listeners for click events.
         polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+    }
+    public void defaultMap(View view){
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    }
+
+    public void satelliteMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
 }
