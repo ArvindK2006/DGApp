@@ -106,6 +106,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
+
+        mMap.getUiSettings().setScrollGesturesEnabled(false);
+
+
         mMap.getUiSettings().setTiltGesturesEnabled(true);
 
         final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
