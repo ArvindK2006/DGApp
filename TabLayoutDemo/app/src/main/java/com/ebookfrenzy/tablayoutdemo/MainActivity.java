@@ -30,8 +30,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -62,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         new TabLayoutMediator(binding.tabLayout, binding.viewPager,
                 new TabLayoutMediator.TabConfigurationStrategy() {
+
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                         switch(position) {
