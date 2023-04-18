@@ -19,8 +19,10 @@ public class TabStateAdapter extends FragmentStateAdapter{
             case 0:
                 return new Tab1Fragment();
             case 1:
-                return new Tab3Fragment();
+                return new MapsFragment();
             case 2:
+                return new Tab3Fragment();
+            case 3:
                 return new Tab4Fragment();
             //case 3:
               //  return new SignUpFragment();

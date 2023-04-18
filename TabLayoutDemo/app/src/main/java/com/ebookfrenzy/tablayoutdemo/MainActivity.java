@@ -3,33 +3,19 @@ package com.ebookfrenzy.tablayoutdemo;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
-
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import com.ebookfrenzy.tablayoutdemo.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.net.Uri;
-import android.widget.Button;
-import android.widget.EditText;
-
-import androidx.viewpager.widget.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.ebookfrenzy.tablayoutdemo.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
     
@@ -56,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void configureTabLayout(){
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 4; i++){
             //change to i < 4 when 4th tab works
             binding.tabLayout.addTab(binding.tabLayout.newTab());
         }
@@ -77,9 +63,12 @@ public class MainActivity extends AppCompatActivity {
                                 tab.setText("Home");
                                 break;
                             case 1:
-                                tab.setText("Events");
+                                tab.setText("Map");
                                 break;
                             case 2:
+                                tab.setText("Events");
+                                break;
+                            case 3:
                                 tab.setText("About");
                                 break;
                             //case 3:
