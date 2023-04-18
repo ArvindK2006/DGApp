@@ -26,6 +26,8 @@ import android.widget.EditText;
 
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.tabs.TabLayout;
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    ViewPager2 viewPager2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        viewPager2 = findViewById(R.id.view_pager);
+
+        viewPager2.setUserInputEnabled(false);
+
         setSupportActionBar(binding.toolbar);
 
         configureTabLayout();
@@ -48,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     protected void configureTabLayout(){
+
         for(int i = 0; i < 3; i++){
             //change to i < 4 when 4th tab works
             binding.tabLayout.addTab(binding.tabLayout.newTab());
