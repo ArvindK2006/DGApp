@@ -15,5 +15,16 @@
          android:textSize="20sp"
          android:textColor="@android:color/black"/>
 
+     <Button
+         android:id="@+id/switchButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginEnd="159dp"
+         android:layout_marginBottom="239dp"
+         android:text="to sign up" />
+
 </RelativeLayout>
 

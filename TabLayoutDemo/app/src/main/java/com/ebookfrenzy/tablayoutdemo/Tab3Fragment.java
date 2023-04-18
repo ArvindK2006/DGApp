@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,8 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.ebookfrenzy.tablayoutdemo.databinding.FragmentSignupBinding;
-import com.ebookfrenzy.tablayoutdemo.databinding.FragmentTab3Binding;
+//import com.ebookfrenzy.tablayoutdemo.databinding.FragmentSignupBinding;
+//import com.ebookfrenzy.tablayoutdemo.databinding.FragmentTab3Binding;
 //import com.sun.mail.iap.Response;
 
 import org.json.JSONArray;
@@ -28,6 +30,15 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +48,7 @@ import java.util.Locale;
 public class Tab3Fragment extends Fragment {
 
     Button button;
+    Button toSignUp;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,16 +96,34 @@ public class Tab3Fragment extends Fragment {
 
     }
 
+    /*
     public void openSignUpActivity(){
         Intent intent = new Intent(getActivity(),SignUpActivity.class);
         startActivity(intent);
     }
+    */
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_tab3, container, false);
+
+        TextView events = view.findViewById(R.id.text_view_result);
+        Button toSignUp = (Button) view.findViewById(R.id.switchButton);
+        toSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toSignUp.setVisibility(View.GONE);
+                events.setVisibility(View.GONE);
+
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new SignUpFragment());
+                fr.addToBackStack(null);
+                fr.commit();
+            }
+        });
 
         // When the button is clicked, the fragment_signup screen is shown
         // however, the rest of the app is still visible and interactive

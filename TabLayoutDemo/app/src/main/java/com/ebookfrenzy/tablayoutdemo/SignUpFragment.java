@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Properties;
 
+import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -68,6 +69,7 @@ public class SignUpFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -78,8 +80,8 @@ public class SignUpFragment extends Fragment {
 
 
            // final String username = "raghus06@yahoo.com";
-
         }
+        //View.active
     }
 
 
@@ -91,7 +93,7 @@ public class SignUpFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
 
-
+        //setContentView(View.id);
 
         Button btnSend = (Button) view.findViewById(R.id.btnSend);
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +119,7 @@ public class SignUpFragment extends Fragment {
                     props.put("mail.smtp.host", "smtp.mail.yahoo.com");
                     props.put("mail.smtp.port", "465");
 
-                    Session session = Session.getInstance(props, new javax.mail.Authenticator(){
+                    Session session = Session.getInstance(props, new Authenticator(){
                         protected PasswordAuthentication getPasswordAuthentication(){
                             return new PasswordAuthentication(username, password);
                         }
@@ -143,7 +145,7 @@ public class SignUpFragment extends Fragment {
                                 }
                             }
                         }).start();
-                          Toast.makeText(getActivity().getApplicationContext(), "email sent successfully", Toast.LENGTH_LONG).show();
+                          Toast.makeText(getActivity().getApplicationContext(), "Email sent successfully.", Toast.LENGTH_LONG).show();
 
                     } catch (MessagingException e) {
                         throw new RuntimeException(e);

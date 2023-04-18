@@ -22,8 +22,8 @@ public class TabStateAdapter extends FragmentStateAdapter{
                 return new Tab3Fragment();
             case 2:
                 return new Tab4Fragment();
-            case 3:
-                return new SignUpFragment();
+            //case 3:
+              //  return new SignUpFragment();
             default:
                 return null;
         }
