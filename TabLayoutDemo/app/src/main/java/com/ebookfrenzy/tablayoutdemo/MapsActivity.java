@@ -139,6 +139,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .title("Sledding Hill")
                         .icon(smallMarkerIcon2));
 
+
+        final LatLng deerGrove5 = new LatLng(42.145889, -88.073699);
+
+        Bitmap c = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_wheelchair);
+        Bitmap smallMarker3 = Bitmap.createScaledBitmap(c, width, height, false);
+        BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
+
+        Marker deerGrove5th = mMap.addMarker(
+                new MarkerOptions()
+                        .position(deerGrove5)
+                        .title("Deer Grove #5")
+                        .snippet("Capacity: 300" +
+                                "Accessible May 1 to October 31" +
+                                "Distance to parking: 300 ft" +
+                                "Distance to accessible portable bathroom: 250 ft")
+                        .icon(smallMarkerIcon3));
+
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
                 .add(
