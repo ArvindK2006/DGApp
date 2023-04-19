@@ -94,7 +94,7 @@ public class MapsFragment extends Fragment {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
+    //@Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
@@ -594,7 +594,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.145645, -88.057304),
                         new LatLng(42.145148, -88.057591)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline6.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -756,7 +756,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.142250, -88.062970)
 
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.tan)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.tan)));
         polyline9.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
 
@@ -806,7 +806,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.140220, -88.056808),
                         new LatLng(42.140325, -88.056729)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.tan)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.tan)));
         polyline10.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline11 = mMap.addPolyline(new PolylineOptions()
@@ -916,7 +916,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.141249, -88.042290),
                         new LatLng(42.141300, -88.042238)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
         polyline11.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline12 = mMap.addPolyline(new PolylineOptions()
@@ -989,7 +989,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.141439, -88.058045),
                         new LatLng(42.141417, -88.058076)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
         polyline12.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline13 = mMap.addPolyline(new PolylineOptions()
@@ -1183,7 +1183,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.143985, -88.057831),
                         new LatLng(42.143843, -88.057786)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.brown)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.brown)));
         polyline14.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
         Polyline polyline15 = mMap.addPolyline(new PolylineOptions()
@@ -1202,7 +1202,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.146570, -88.079851),
                         new LatLng(42.146590, -88.079728)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline15.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1213,7 +1213,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.146662, -88.081889),
                         new LatLng(42.146217, -88.081955)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.green)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.green)));
         // Set listeners for click events.
         polyline16.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1326,7 +1326,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.147581, -88.074228),
                         new LatLng(42.147589, -88.074086)
                 )
-                .color(ContextCompat.getColor(getApplicationContext(), R.color.orange)));
+                .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.orange)));
         // Set listeners for click events.
         polyline18.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1821,7 +1821,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.146395, -88.077732),
                         new LatLng(42.146332, -88.077587),
                         new LatLng(42.146294, -88.077454)
-                ).color(ContextCompat.getColor(getApplicationContext(), R.color.purple)));
+                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.purple)));
         // Set listeners for click events.
         polyline22.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1843,7 +1843,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.145943, -88.077768),
                         new LatLng(42.145931, -88.077682),
                         new LatLng(42.145932, -88.077519)
-                ).color(ContextCompat.getColor(getApplicationContext(), R.color.purple)));
+                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.purple)));
         // Set listeners for click events.
         polyline23.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
@@ -1966,7 +1966,7 @@ public class MapsFragment extends Fragment {
                         new LatLng(42.138475, -88.065261),
                         new LatLng(42.138569, -88.065080)
 
-                ).color(ContextCompat.getColor(getApplicationContext(), R.color.blue)));
+                ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.blue)));
         // Set listeners for click events.
         polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
