@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +29,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -49,6 +55,8 @@ public class Tab3Fragment extends Fragment {
 
     Button button;
     Button toSignUp;
+
+    ArrayList<String> myList = new ArrayList<String>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -110,7 +118,8 @@ public class Tab3Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_tab3, container, false);
 
-        TextView events = view.findViewById(R.id.text_view_result);
+        //TextView events = view.findViewById(R.id.text_view_result);
+        ListView events = view.findViewById(R.id.text_view_result);
         Button toSignUp = (Button) view.findViewById(R.id.switchButton);
         toSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +139,7 @@ public class Tab3Fragment extends Fragment {
        // TextView tv = (TextView) view.findViewById(R.id.text_view_result);
 
 
-        TextView tv = (TextView) view.findViewById(R.id.text_view_result);
+        ListView tv = view.findViewById(R.id.text_view_result);
 
         String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
 
@@ -169,12 +178,15 @@ public class Tab3Fragment extends Fragment {
                                     fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
                                 }
 
-                                tv.append(summary + ", " + created + "\n\n");
+                                myList.add(summary + ", " + created + "\n\n");
                             }
                         }
                        // tv.append( ", " + created + "\n\n");
 
                     }
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),
+                            android.R.layout.simple_list_item_1, myList);
+                    events.setAdapter(adapter);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -186,9 +198,19 @@ public class Tab3Fragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                tv.setText("error ");
+                //tv.setText("error ");
             }
         });
+
+       //final List<String> ListElementsArrayList = new ArrayList<String>(Arrays.asList(myList));
+        /*
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),
+                android.R.layout.simple_list_item_1, myList);
+        events.setAdapter(adapter);
+        */
+
+
+
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         requestQueue.add(jsonObjectRequest);
 
