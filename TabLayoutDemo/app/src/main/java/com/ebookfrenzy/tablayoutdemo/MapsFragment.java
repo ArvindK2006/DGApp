@@ -1,6 +1,5 @@
 package com.ebookfrenzy.tablayoutdemo;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -1934,7 +1933,6 @@ public class MapsFragment extends Fragment {
             // Set listeners for click events.
             polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
         }
-
         public void defaultMap(View view){
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }

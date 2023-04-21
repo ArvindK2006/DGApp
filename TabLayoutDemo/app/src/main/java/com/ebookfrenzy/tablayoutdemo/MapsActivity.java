@@ -1,18 +1,15 @@
 package com.ebookfrenzy.tablayoutdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.app.ActionBar;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -1974,8 +1971,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
 
 
-    }
 
+    }
     public void defaultMap(View view){
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
@@ -1983,7 +1980,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void satelliteMap(View view) {
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
-
 
 
 //    @Override
