@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -74,9 +75,9 @@ public class SignUpFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
-            txtEmail = txtEmail.findViewById(R.id.txtEmail);
+            /*txtEmail = txtEmail.findViewById(R.id.txtEmail);
             txtMessage = txtMessage.findViewById(R.id.txtMessage);
-            btnSend = btnSend.findViewById(R.id.btnSend);
+            btnSend = btnSend.findViewById(R.id.btnSend);*/
 
 
            // final String username = "raghus06@yahoo.com";
@@ -88,10 +89,21 @@ public class SignUpFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Bundle args = getArguments();
+        String eventDisplayed = args.getString("test");
+        //args.get
+
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_tab2, container, false);
 
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
+
+
+        TextView display = (TextView) view.findViewById(R.id.display);
+        display.setText(eventDisplayed);
+
+        //display.setText();
 
         //setContentView(View.id);
 
@@ -107,7 +119,8 @@ public class SignUpFragment extends Fragment {
                     final String password = "eqqkkevzohdkbaon";
 
                     EditText messageToSend = (EditText) view.findViewById(R.id.txtMessage);
-                    String body = messageToSend.getText().toString();
+                    //String body = messageToSend.getText().toString();
+                    String body = eventDisplayed;
 
                     EditText txtEmail = (EditText) view.findViewById(R.id.txtEmail);
                     String email = txtEmail.getText().toString();

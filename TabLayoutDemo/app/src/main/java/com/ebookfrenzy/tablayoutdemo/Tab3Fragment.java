@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -34,7 +37,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -55,6 +61,10 @@ public class Tab3Fragment extends Fragment {
 
     Button button;
     Button toSignUp;
+
+    private String selectedFromList;
+
+    //List<CalEvent> calEvents = new List<CalEvent>();
 
     ArrayList<String> myList = new ArrayList<String>();
 
@@ -127,10 +137,34 @@ public class Tab3Fragment extends Fragment {
                 toSignUp.setVisibility(View.GONE);
                 events.setVisibility(View.GONE);
 
+                //code to send event info to sign up fragment will go here
+
+                //Started writing here 4/22/23
+                SignUpFragment suf = new SignUpFragment();
+                Bundle args = new Bundle();
+                //args.putString("test", "test Arvind");
+                //suf.setArguments(args);
+                //    fragment.setArguments(bundle);
+                //End 4/22/23
+
+                args.putString("test", selectedFromList);
+                suf.setArguments(args);
+
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new SignUpFragment());
+                fr.replace(R.id.fragment_container, suf);
+
                 fr.addToBackStack(null);
                 fr.commit();
+            }
+        });
+
+        events.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int index = i;
+                int selectedValue = index;
+                selectedFromList =(events.getItemAtPosition(index).toString());
             }
         });
 
@@ -177,8 +211,9 @@ public class Tab3Fragment extends Fragment {
                                 } else {
                                     fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
                                 }
-
-                                myList.add(summary + ", " + created + "\n\n");
+                                String iCalUID = item.getString("iCalUID");
+                                String html = item.getString("htmlLink");
+                                myList.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");
                             }
                         }
                        // tv.append( ", " + created + "\n\n");
