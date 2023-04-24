@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.Properties;
 
@@ -90,15 +91,40 @@ public class SignUpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_signup, container, false);
+
+        Button goBack = view.findViewById(R.id.backToEvents);
+        Button btnSend = (Button) view.findViewById(R.id.btnSend);
+        EditText email = view.findViewById(R.id.txtEmail);
+        TextView displayEvent = view.findViewById(R.id.display);
+
+
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack.setVisibility(View.GONE);
+                btnSend.setVisibility(View.GONE);
+                email.setVisibility(View.GONE);
+                displayEvent.setVisibility(View.GONE);
+
+                Tab3Fragment fragThree = new Tab3Fragment();
+
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Tab3Fragment());
+                fr.replace(R.id.fragment_container, fragThree);
+
+                fr.addToBackStack(null);
+                fr.commit();
+            }
+        });
+
         Bundle args = getArguments();
         String eventDisplayed = args.getString("test");
         //args.get
 
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_tab2, container, false);
-
-        View view = inflater.inflate(R.layout.fragment_signup, container, false);
-
 
         TextView display = (TextView) view.findViewById(R.id.display);
         display.setText(eventDisplayed);
@@ -107,7 +133,7 @@ public class SignUpFragment extends Fragment {
 
         //setContentView(View.id);
 
-        Button btnSend = (Button) view.findViewById(R.id.btnSend);
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +144,7 @@ public class SignUpFragment extends Fragment {
                     final String username = "raghus06@yahoo.com";
                     final String password = "eqqkkevzohdkbaon";
 
-                    EditText messageToSend = (EditText) view.findViewById(R.id.txtMessage);
+                    //EditText messageToSend = (EditText) view.findViewById(R.id.txtMessage);
                     //String body = messageToSend.getText().toString();
                     String body = eventDisplayed;
 
