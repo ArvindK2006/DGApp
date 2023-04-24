@@ -117,6 +117,17 @@ public class MapsFragment extends Fragment {
                             .title("Sledding Hill")
                             .icon(smallMarkerIcon2));
 
+            LatLng parking1Location = new LatLng(42.14607732041637, -88.06725910505321);
+
+            Bitmap c = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker3 = Bitmap.createScaledBitmap(c, width, height, false);
+            BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
+
+            Marker parking1 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking1Location)
+                            .icon(smallMarkerIcon3));
+
             Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                     .clickable(true)
                     .add(

@@ -20,8 +20,44 @@
     <string name="instructions">Use the tabs at the top of the screen to
         navigate throughout the app.</string>
 
-    <!-- Fragment 2: Map -->
-    <string name="style_json">[
+  <!-- Fragment 2: Map -->
+  <string name="style_json">
+      [
+  {
+    "featureType": "poi.attraction",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
   {
     "featureType": "poi.business",
     "elementType": "labels",
@@ -50,17 +86,7 @@
     ]
   },
   {
-    "featureType": "poi.business",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.business",
-    "elementType": "labels.text.stroke",
+    "featureType": "poi.government",
     "stylers": [
       {
         "visibility": "off"
@@ -95,8 +121,7 @@
     ]
   },
   {
-    "featureType": "poi.government",
-    "elementType": "labels.text.fill",
+    "featureType": "poi.park",
     "stylers": [
       {
         "visibility": "off"
@@ -104,16 +129,7 @@
     ]
   },
   {
-    "featureType": "poi.government",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.medical",
+    "featureType": "poi.park",
     "elementType": "labels",
     "stylers": [
       {
@@ -122,7 +138,7 @@
     ]
   },
   {
-    "featureType": "poi.medical",
+    "featureType": "poi.park",
     "elementType": "labels.icon",
     "stylers": [
       {
@@ -131,26 +147,8 @@
     ]
   },
   {
-    "featureType": "poi.medical",
+    "featureType": "poi.park",
     "elementType": "labels.text",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.medical",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.medical",
-    "elementType": "labels.text.stroke",
     "stylers": [
       {
         "visibility": "off"
@@ -185,17 +183,7 @@
     ]
   },
   {
-    "featureType": "poi.place_of_worship",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.place_of_worship",
-    "elementType": "labels.text.stroke",
+    "featureType": "poi.school",
     "stylers": [
       {
         "visibility": "off"
@@ -230,17 +218,7 @@
     ]
   },
   {
-    "featureType": "poi.school",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.school",
-    "elementType": "labels.text.stroke",
+    "featureType": "poi.sports_complex",
     "stylers": [
       {
         "visibility": "off"
@@ -275,17 +253,8 @@
     ]
   },
   {
-    "featureType": "poi.sports_complex",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.sports_complex",
-    "elementType": "labels.text.stroke",
+    "featureType": "road",
+    "elementType": "labels.icon",
     "stylers": [
       {
         "visibility": "off"
@@ -300,9 +269,55 @@
         "visibility": "simplified"
       }
     ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
   }
-]
-  </string>
+]</string>
 
 
     <string name="DGInfo">Deer Grove, one of the country’s first forest preserves, features nearly
