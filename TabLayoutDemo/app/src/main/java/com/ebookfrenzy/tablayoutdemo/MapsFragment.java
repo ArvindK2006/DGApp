@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -1933,21 +1934,40 @@ public class MapsFragment extends Fragment {
             // Set listeners for click events.
             polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
         }
-        public void defaultMap(View view){
-            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        }
-
-        public void satelliteMap(View view) {
-            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        }
-
     };
+
+    public void defaultMap(View view){
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    }
+
+    public void satelliteMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_maps, container, false);
+//        return inflater.inflate(R.layout.fragment_maps, container, false);
+        View view = inflater.inflate(R.layout.fragment_maps, container, false);
+
+        Button dMap = (Button) view.findViewById(R.id.defaultMap);
+        dMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defaultMap(v);
+            }
+        });
+
+        Button sMap = (Button) view.findViewById(R.id.satelliteMap);
+        sMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                satelliteMap(v);
+            }
+        });
+        return view;
     }
 
     @Override
