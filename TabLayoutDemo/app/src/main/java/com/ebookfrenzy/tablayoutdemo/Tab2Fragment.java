@@ -2,7 +2,6 @@ package com.ebookfrenzy.tablayoutdemo;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PatternItem;
@@ -124,13 +122,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
 
         mMap.setMinZoomPreference(13.0f);
         mMap.setMaxZoomPreference(16.0f);
-
-        boolean success = mMap.setMapStyle(new MapStyleOptions(getResources()
-                .getString(R.string.style_json)));
-
-        if (!success) {
-            Log.e(TAG, "Style parsing failed.");
-        }
 
         // Add a marker in Sydney and move the camera
         LatLng middle = new LatLng(42.144, -88.069);

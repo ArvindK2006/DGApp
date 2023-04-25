@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -20,7 +19,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PatternItem;
@@ -81,15 +79,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        mMap.setMinZoomPreference(13.0f);
-        mMap.setMaxZoomPreference(16.0f);
-
-        boolean success = mMap.setMapStyle(new MapStyleOptions(getResources()
-                .getString(R.string.style_json)));
-
-        if (!success) {
-            Log.e(TAG, "Style parsing failed.");
-        }
+        mMap.setMinZoomPreference(11.0f);
+        mMap.setMaxZoomPreference(19.0f);
 
         // Add a marker in Sydney and move the camera
         LatLng middle = new LatLng(42.144, -88.069);
