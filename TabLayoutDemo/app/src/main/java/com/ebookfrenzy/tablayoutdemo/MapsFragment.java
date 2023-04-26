@@ -192,6 +192,67 @@ public class MapsFragment extends Fragment {
                             .title("Parking")
                             .icon(smallMarkerIcon8));
 
+            LatLng parking7Location = new LatLng(42.142595, -88.061830);
+
+            Bitmap i = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker9 = Bitmap.createScaledBitmap(i, width, height, false);
+            BitmapDescriptor smallMarkerIcon9 = BitmapDescriptorFactory.fromBitmap(smallMarker9);
+
+            Marker parking7 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking7Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon9));
+
+            LatLng parking8Location = new LatLng(42.145771, -88.074691);
+
+            Bitmap j = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker10 = Bitmap.createScaledBitmap(j, width, height, false);
+            BitmapDescriptor smallMarkerIcon10 = BitmapDescriptorFactory.fromBitmap(smallMarker10);
+
+            Marker parking8 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking8Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon10));
+
+            LatLng parking9Location = new LatLng(42.141058, -88.068342);
+
+            Bitmap k = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker11 = Bitmap.createScaledBitmap(k, width, height, false);
+            BitmapDescriptor smallMarkerIcon11 = BitmapDescriptorFactory.fromBitmap(smallMarker11);
+
+            Marker parking9 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking9Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon11));
+
+            LatLng parking10Location = new LatLng(42.143752, -88.067785);
+
+            Bitmap l = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker12 = Bitmap.createScaledBitmap(l, width, height, false);
+            BitmapDescriptor smallMarkerIcon12 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
+
+            Marker parking10 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking10Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon12));
+
+            final LatLng flyingAreaLocation = new LatLng(42.144299151106324, -88.04209656306868);
+
+            Bitmap m = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_flying);
+            Bitmap smallMarker13 = Bitmap.createScaledBitmap(m, width, height, false);
+            BitmapDescriptor smallMarkerIcon13 = BitmapDescriptorFactory.fromBitmap(smallMarker13);
+
+            Marker flyingArea = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(flyingAreaLocation)
+                            .title("Airplane Flying Area")
+                            .icon(smallMarkerIcon13));
+
+
 
 
             Polyline polyline1 = mMap.addPolyline(new PolylineOptions()

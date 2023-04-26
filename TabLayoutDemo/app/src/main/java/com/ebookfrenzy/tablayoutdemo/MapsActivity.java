@@ -35,6 +35,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     CustomPolyline customPolylineObj;
     ArrayList<CustomPolyline> customPolylineArrayList = new ArrayList<>();
 
+
     private static final String TAG = MapsActivity.class.getSimpleName();
     private static final int PATTERN_DASH_LENGTH_PX = 20;
     public static final int PATTERN_GAP_LENGTH_PX = 10;
