@@ -1987,7 +1987,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking1Location = new LatLng(42.14607732041637, -88.06725910505321);
 
                     Bitmap p1 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker3 = Bitmap.createScaledBitmap(c, width, height, false);
+                    Bitmap smallMarker3 = Bitmap.createScaledBitmap(p1, width, height, false);
                     BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
 
                     Marker parking1 = mMap.addMarker(
@@ -2000,7 +2000,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking2Location = new LatLng(42.14076656523424, -88.04246547617416);
 
                     Bitmap p2 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker4 = Bitmap.createScaledBitmap(d, width, height, false);
+                    Bitmap smallMarker4 = Bitmap.createScaledBitmap(p2, width, height, false);
                     BitmapDescriptor smallMarkerIcon4 = BitmapDescriptorFactory.fromBitmap(smallMarker4);
 
                     Marker parking2 = mMap.addMarker(
@@ -2013,7 +2013,7 @@ public class MapsFragment extends Fragment {
 
 
                     Bitmap p3 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker5 = Bitmap.createScaledBitmap(e, width, height, false);
+                    Bitmap smallMarker5 = Bitmap.createScaledBitmap(p3, width, height, false);
                     BitmapDescriptor smallMarkerIcon5 = BitmapDescriptorFactory.fromBitmap(smallMarker5);
 
                     Marker parking3 = mMap.addMarker(
@@ -2025,7 +2025,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking4Location = new LatLng(42.143609, -88.040554);
 
                     Bitmap p4 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker6 = Bitmap.createScaledBitmap(f, width, height, false);
+                    Bitmap smallMarker6 = Bitmap.createScaledBitmap(p4, width, height, false);
                     BitmapDescriptor smallMarkerIcon6 = BitmapDescriptorFactory.fromBitmap(smallMarker6);
 
                     Marker parking4 = mMap.addMarker(
@@ -2037,7 +2037,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking5Location = new LatLng(42.135363, -88.091243);
 
                     Bitmap p5 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker7 = Bitmap.createScaledBitmap(g, width, height, false);
+                    Bitmap smallMarker7 = Bitmap.createScaledBitmap(p5, width, height, false);
                     BitmapDescriptor smallMarkerIcon7 = BitmapDescriptorFactory.fromBitmap(smallMarker7);
 
                     Marker parking5 = mMap.addMarker(
@@ -2049,7 +2049,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking6Location = new LatLng(42.136133, -88.078726);
 
                     Bitmap p6 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker8 = Bitmap.createScaledBitmap(h, width, height, false);
+                    Bitmap smallMarker8 = Bitmap.createScaledBitmap(p6, width, height, false);
                     BitmapDescriptor smallMarkerIcon8 = BitmapDescriptorFactory.fromBitmap(smallMarker8);
 
                     Marker parking6 = mMap.addMarker(
@@ -2061,7 +2061,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking7Location = new LatLng(42.142595, -88.061830);
 
                     Bitmap p7 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker9 = Bitmap.createScaledBitmap(i, width, height, false);
+                    Bitmap smallMarker9 = Bitmap.createScaledBitmap(p7, width, height, false);
                     BitmapDescriptor smallMarkerIcon9 = BitmapDescriptorFactory.fromBitmap(smallMarker9);
 
                     Marker parking7 = mMap.addMarker(
@@ -2073,7 +2073,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking8Location = new LatLng(42.145771, -88.074691);
 
                     Bitmap p8 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker10 = Bitmap.createScaledBitmap(j, width, height, false);
+                    Bitmap smallMarker10 = Bitmap.createScaledBitmap(p8, width, height, false);
                     BitmapDescriptor smallMarkerIcon10 = BitmapDescriptorFactory.fromBitmap(smallMarker10);
 
                     Marker parking8 = mMap.addMarker(
@@ -2085,7 +2085,7 @@ public class MapsFragment extends Fragment {
                     LatLng parking9Location = new LatLng(42.141058, -88.068342);
 
                     Bitmap p9 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker11 = Bitmap.createScaledBitmap(k, width, height, false);
+                    Bitmap smallMarker11 = Bitmap.createScaledBitmap(p9, width, height, false);
                     BitmapDescriptor smallMarkerIcon11 = BitmapDescriptorFactory.fromBitmap(smallMarker11);
 
                     Marker parking9 = mMap.addMarker(
@@ -2097,8 +2097,8 @@ public class MapsFragment extends Fragment {
                     LatLng parking10Location = new LatLng(42.143752, -88.067785);
 
                     Bitmap p10 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarkerp10 = Bitmap.createScaledBitmap(l, width, height, false);
-                    BitmapDescriptor smallMarkerIconp10 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
+                    Bitmap smallMarker12 = Bitmap.createScaledBitmap(p9, width, height, false);
+                    BitmapDescriptor smallMarkerIcon12 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
 
                     Marker parking10 = mMap.addMarker(
                             new MarkerOptions()
@@ -2109,7 +2109,7 @@ public class MapsFragment extends Fragment {
                 }
                 else
                 {
-                    
+
                 }
 
             }});
