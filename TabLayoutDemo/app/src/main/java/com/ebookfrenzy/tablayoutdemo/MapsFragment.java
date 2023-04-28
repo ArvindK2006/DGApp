@@ -89,6 +89,9 @@ public class MapsFragment extends Fragment {
     // All the customizable markers used in the maps
     Marker deerGroveLake;
 
+    Marker sleddingHill;
+    Marker flyingArea;
+
     Marker parking1;
     Marker parking2;
     Marker parking3;
@@ -2135,6 +2138,78 @@ public class MapsFragment extends Fragment {
 
             }});
 
+        CheckBox sleddingHillCheckbox = (CheckBox) view.findViewById(R.id.SleddingHillEnable);
+
+        sleddingHillCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    final LatLng sleddingHillLocation = new LatLng(42.146534, -88.074027);
+
+                    Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_sled);
+                    Bitmap smallMarker2 = Bitmap.createScaledBitmap(b, width, height, false);
+                    BitmapDescriptor smallMarkerIcon2 = BitmapDescriptorFactory.fromBitmap(smallMarker2);
+
+                    sleddingHill = mMap.addMarker(
+                            new MarkerOptions()
+                                    .position(sleddingHillLocation)
+                                    .title("Sledding Hill")
+                                    .icon(smallMarkerIcon2));
+                }
+                else {
+                    sleddingHill.setVisible(false);
+                }
+            }
+        });
+
+        CheckBox lakeCheckbox = (CheckBox) view.findViewById(R.id.LakeEnable);
+
+        lakeCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
+
+                    Bitmap a = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_water);
+                    Bitmap smallMarker1 = Bitmap.createScaledBitmap(a, width, height, false);
+                    BitmapDescriptor smallMarkerIcon1 = BitmapDescriptorFactory.fromBitmap(smallMarker1);
+
+                    deerGroveLake = mMap.addMarker(
+                            new MarkerOptions()
+                                    .position(deerGroveLakeLocation)
+                                    .title("Deer Grove Lake")
+                                    .icon(smallMarkerIcon1));
+                }
+                else {
+                    deerGroveLake.setVisible(false);
+                }
+            }
+        });
+
+        CheckBox flyingAreaCheckbox = (CheckBox) view.findViewById(R.id.FlyingAreaEnabled);
+
+        flyingAreaCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    final LatLng flyingAreaLocation = new LatLng(42.144299151106324, -88.04209656306868);
+
+                    Bitmap m = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_flying);
+                    Bitmap smallMarker13 = Bitmap.createScaledBitmap(m, width, height, false);
+                    BitmapDescriptor smallMarkerIcon13 = BitmapDescriptorFactory.fromBitmap(smallMarker13);
+
+                    flyingArea = mMap.addMarker(
+                            new MarkerOptions()
+                                    .position(flyingAreaLocation)
+                                    .title("Airplane Flying Area")
+                                    .icon(smallMarkerIcon13));
+                }
+                else {
+                   flyingArea.setVisible(false);
+                }
+            }
+        });
+
         return view;
     }
 
@@ -2172,65 +2247,14 @@ public class MapsFragment extends Fragment {
                 Log.e(TAG, "Style parsing failed.");
             }
 
-            // Add a marker in Sydney and move the camera
+            // Add a marker in DeerGrove and move the camera
             LatLng middle = new LatLng(42.144, -88.069);
-//        LatLng deerGrove = new LatLng(42.14384682495575, -88.06887273075864);
-//        LatLng deerGroveEast = new LatLng(42.14572971060655, -88.04575745123859);
-//        mMap.addMarker(new MarkerOptions().position(deerGrove).title("Deer Grove Marker"));
-//        mMap.addMarker(new MarkerOptions().position(deerGroveEast).title("Deer Grove East Marker"));
 
             float zoomLevel = 13.0f;
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(middle, zoomLevel));
-
             mMap.getUiSettings().setZoomControlsEnabled(true);
             mMap.getUiSettings().setCompassEnabled(true);
-
-
             mMap.getUiSettings().setTiltGesturesEnabled(true);
-
-
-            final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
-
-            Bitmap a = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_water);
-            Bitmap smallMarker1 = Bitmap.createScaledBitmap(a, width, height, false);
-            BitmapDescriptor smallMarkerIcon1 = BitmapDescriptorFactory.fromBitmap(smallMarker1);
-
-            deerGroveLake = mMap.addMarker(
-                    new MarkerOptions()
-                            .position(deerGroveLakeLocation)
-                            .title("Deer Grove Lake")
-                            .icon(smallMarkerIcon1));
-
-
-            final LatLng sleddingHillLocation = new LatLng(42.146534, -88.074027);
-
-            Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_sled);
-            Bitmap smallMarker2 = Bitmap.createScaledBitmap(b, width, height, false);
-            BitmapDescriptor smallMarkerIcon2 = BitmapDescriptorFactory.fromBitmap(smallMarker2);
-
-            Marker sleddingHill = mMap.addMarker(
-                    new MarkerOptions()
-                            .position(sleddingHillLocation)
-                            .title("Sledding Hill")
-                            .icon(smallMarkerIcon2));
-
-
-
-            final LatLng flyingAreaLocation = new LatLng(42.144299151106324, -88.04209656306868);
-
-            Bitmap m = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_flying);
-            Bitmap smallMarker13 = Bitmap.createScaledBitmap(m, width, height, false);
-            BitmapDescriptor smallMarkerIcon13 = BitmapDescriptorFactory.fromBitmap(smallMarker13);
-
-            Marker flyingArea = mMap.addMarker(
-                    new MarkerOptions()
-                            .position(flyingAreaLocation)
-                            .title("Airplane Flying Area")
-                            .icon(smallMarkerIcon13));
-
-
-
-
         }
     };
 
