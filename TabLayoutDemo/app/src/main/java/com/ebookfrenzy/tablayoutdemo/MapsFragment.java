@@ -89,6 +89,18 @@ public class MapsFragment extends Fragment {
     // All the customizable markers used in the maps
     Marker deerGroveLake;
 
+    Marker parking1;
+    Marker parking2;
+    Marker parking3;
+    Marker parking4;
+    Marker parking5;
+    Marker parking6;
+    Marker parking7;
+    Marker parking8;
+    Marker parking9;
+    Marker parking10;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -1990,7 +2002,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker3 = Bitmap.createScaledBitmap(p1, width, height, false);
                     BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
 
-                    Marker parking1 = mMap.addMarker(
+                    parking1 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking1Location)
                                     .title("Parking")
@@ -2003,7 +2015,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker4 = Bitmap.createScaledBitmap(p2, width, height, false);
                     BitmapDescriptor smallMarkerIcon4 = BitmapDescriptorFactory.fromBitmap(smallMarker4);
 
-                    Marker parking2 = mMap.addMarker(
+                    parking2 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking2Location)
                                     .title("Parking")
@@ -2016,7 +2028,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker5 = Bitmap.createScaledBitmap(p3, width, height, false);
                     BitmapDescriptor smallMarkerIcon5 = BitmapDescriptorFactory.fromBitmap(smallMarker5);
 
-                    Marker parking3 = mMap.addMarker(
+                    parking3 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking3Location)
                                     .title("Parking")
@@ -2028,7 +2040,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker6 = Bitmap.createScaledBitmap(p4, width, height, false);
                     BitmapDescriptor smallMarkerIcon6 = BitmapDescriptorFactory.fromBitmap(smallMarker6);
 
-                    Marker parking4 = mMap.addMarker(
+                    parking4 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking4Location)
                                     .title("Parking")
@@ -2040,7 +2052,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker7 = Bitmap.createScaledBitmap(p5, width, height, false);
                     BitmapDescriptor smallMarkerIcon7 = BitmapDescriptorFactory.fromBitmap(smallMarker7);
 
-                    Marker parking5 = mMap.addMarker(
+                    parking5 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking5Location)
                                     .title("Parking")
@@ -2052,7 +2064,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker8 = Bitmap.createScaledBitmap(p6, width, height, false);
                     BitmapDescriptor smallMarkerIcon8 = BitmapDescriptorFactory.fromBitmap(smallMarker8);
 
-                    Marker parking6 = mMap.addMarker(
+                    parking6 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking6Location)
                                     .title("Parking")
@@ -2064,7 +2076,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker9 = Bitmap.createScaledBitmap(p7, width, height, false);
                     BitmapDescriptor smallMarkerIcon9 = BitmapDescriptorFactory.fromBitmap(smallMarker9);
 
-                    Marker parking7 = mMap.addMarker(
+                    parking7 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking7Location)
                                     .title("Parking")
@@ -2076,7 +2088,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker10 = Bitmap.createScaledBitmap(p8, width, height, false);
                     BitmapDescriptor smallMarkerIcon10 = BitmapDescriptorFactory.fromBitmap(smallMarker10);
 
-                    Marker parking8 = mMap.addMarker(
+                    parking8 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking8Location)
                                     .title("Parking")
@@ -2088,7 +2100,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker11 = Bitmap.createScaledBitmap(p9, width, height, false);
                     BitmapDescriptor smallMarkerIcon11 = BitmapDescriptorFactory.fromBitmap(smallMarker11);
 
-                    Marker parking9 = mMap.addMarker(
+                    parking9 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking9Location)
                                     .title("Parking")
@@ -2100,7 +2112,7 @@ public class MapsFragment extends Fragment {
                     Bitmap smallMarker12 = Bitmap.createScaledBitmap(p9, width, height, false);
                     BitmapDescriptor smallMarkerIcon12 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
 
-                    Marker parking10 = mMap.addMarker(
+                    parking10 = mMap.addMarker(
                             new MarkerOptions()
                                     .position(parking10Location)
                                     .title("Parking")
@@ -2109,7 +2121,16 @@ public class MapsFragment extends Fragment {
                 }
                 else
                 {
-
+                    parking1.setVisible(false);
+                    parking2.setVisible(false);
+                    parking3.setVisible(false);
+                    parking4.setVisible(false);
+                    parking5.setVisible(false);
+                    parking6.setVisible(false);
+                    parking7.setVisible(false);
+                    parking8.setVisible(false);
+                    parking9.setVisible(false);
+                    parking10.setVisible(false);
                 }
 
             }});
