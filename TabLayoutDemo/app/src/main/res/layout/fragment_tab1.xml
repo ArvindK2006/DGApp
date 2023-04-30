@@ -14,26 +14,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/welcome"
-        android:textSize="@dimen/titleText"
+        android:textSize="@dimen/bodyText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
-
-    <ImageView
-        android:id="@+id/imageView"
-
-        android:layout_width="@dimen/logoWidth"
-        android:layout_height="@dimen/logoHeight"
-        android:src="@drawable/unnamed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/textView4"
@@ -47,6 +34,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864" />
+        app:layout_constraintVertical_bias="0.804" />
+
+    <ImageView
+        android:id="@+id/imageView"
+
+        android:layout_width="389dp"
+        android:layout_height="364dp"
+        android:src="@drawable/unnamed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

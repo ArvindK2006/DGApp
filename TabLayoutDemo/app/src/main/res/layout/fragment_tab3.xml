@@ -5,28 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Tab3Fragment"
-    android:id="@+id/activity_custom_calendar"
+
     android:orientation="horizontal">
 
-     <ListView
-         android:id="@+id/text_view_result"
-         android:choiceMode="singleChoice"
-         android:listSelector="#4CAF50"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textSize="20sp"
-         android:textColor="@android:color/black"/>
+    <ListView
+        android:id="@+id/text_view_result"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="2dp"
+        android:choiceMode="singleChoice"
+        android:listSelector=" #99AD85"
+        android:scrollbars="horizontal|vertical"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 
-     <Button
-         android:id="@+id/switchButton"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentEnd="true"
-         android:layout_alignParentBottom="true"
-         android:layout_centerHorizontal="true"
-         android:layout_marginEnd="147dp"
-         android:layout_marginBottom="65dp"
-         android:text="to sign up" />
+    <Button
+        android:id="@+id/switchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="31dp"
+        android:text="to sign up" />
 
 </RelativeLayout>
 

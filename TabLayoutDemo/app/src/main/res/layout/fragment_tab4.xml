@@ -9,29 +9,17 @@
     tools:context=".Tab1Fragment">
 
     <TextView
-        android:id="@+id/aboutTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aboutTitle"
-        android:textSize="@dimen/titleText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
-
-    <TextView
         android:id="@+id/aboutText"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxWidth="360dp"
         android:text="@string/DGInfo"
-        android:textSize="@dimen/bodyText"
+        android:textSize="@dimen/aboutText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
+        app:layout_constraintVertical_bias="0.152" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -166,11 +166,9 @@ public class SignUpFragment extends Fragment {
 
 
                     try {
-                        //  final String username = "raghus06@yahoo.com";
                         Message message = new MimeMessage(session);
                         message.setFrom(new InternetAddress(username));
                         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-                        //message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Arvind.kakanavaram@gmail.com"));
                         message.setSubject("Thank you for signing up!");
                         message.setText(body);
                         // Transport.send(message);
@@ -184,8 +182,7 @@ public class SignUpFragment extends Fragment {
                                 }
                             }
                         }).start();
-                          Toast.makeText(getActivity().getApplicationContext(), "Email sent successfully.", Toast.LENGTH_LONG).show();
-
+                        Toast.makeText(getActivity().getApplicationContext(), "Email sent successfully.", Toast.LENGTH_LONG).show();
                     } catch (MessagingException e) {
                         throw new RuntimeException(e);
                     }
