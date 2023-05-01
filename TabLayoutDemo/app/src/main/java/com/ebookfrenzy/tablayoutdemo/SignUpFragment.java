@@ -116,6 +116,14 @@ public class SignUpFragment extends Fragment {
 
                 fr.addToBackStack(null);
                 fr.commit();
+
+                /* Tab3Fragment frg = null;
+                frg = (Tab3Fragment) getFragmentManager().findFragmentByTag("fragment_tab3");
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.detach(frg);
+                ft.attach(frg);
+                ft.commit(); Crashing app -- continue trying with this */
+
             }
         });
 
