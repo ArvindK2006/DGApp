@@ -9,9 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -108,21 +111,39 @@ public class SignUpFragment extends Fragment {
                 email.setVisibility(View.GONE);
                 displayEvent.setVisibility(View.GONE);
 
-                Tab3Fragment fragThree = new Tab3Fragment();
+               Tab3Fragment fragThree = new Tab3Fragment();
 
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new Tab3Fragment());
                 fr.replace(R.id.fragment_container, fragThree);
 
                 fr.addToBackStack(null);
+
                 fr.commit();
 
-                /* Tab3Fragment frg = null;
-                frg = (Tab3Fragment) getFragmentManager().findFragmentByTag("fragment_tab3");
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+             /*  FragmentManager mgr = getActivity().getSupportFragmentManager();
+                List<Fragment> frgs = mgr.getFragments();
+                Tab3Fragment frg = (Tab3Fragment)frgs.get(2);
+                final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.detach(frg);
                 ft.attach(frg);
-                ft.commit(); Crashing app -- continue trying with this */
+                ft.commit();*/
+
+               /* FragmentTransaction fr = getActivity().getSupportFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Tab3Fragment());
+                fr.replace(R.id.fragment_container, fragThree);
+
+                fr.addToBackStack(null);
+                fr.commit();
+*/
+
+              /*  frg = (Tab3Fragment) getActivity().getSupportFragmentManager().findFragmentByTag("fragment_tab3");
+                final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.detach(frg);
+                ft.attach(frg);
+                ft.commit();*/
+                 /*Crashing app -- continue trying with this */
 
             }
         });
