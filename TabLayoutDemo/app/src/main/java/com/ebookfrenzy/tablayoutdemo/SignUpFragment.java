@@ -122,7 +122,6 @@ public class SignUpFragment extends Fragment {
                 fr.commit();
 
 
-
              /*  FragmentManager mgr = getActivity().getSupportFragmentManager();
                 List<Fragment> frgs = mgr.getFragments();
                 Tab3Fragment frg = (Tab3Fragment)frgs.get(2);
