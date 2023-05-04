@@ -91,6 +91,7 @@ public class MapsFragment extends Fragment {
 
     Marker sleddingHill;
     Marker flyingArea;
+    Marker campArea;
 
     Marker parking1;
     Marker parking2;
@@ -1543,441 +1544,14 @@ public class MapsFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    polyline1 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.139379, -88.034060),
-                                    new LatLng(42.139515, -88.034126),
-                                    new LatLng(42.139999, -88.034504)));
-
-                    // Set listeners for click events.
-                    polyline1.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline2 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.142838, -88.033981),
-                                    new LatLng(42.142716, -88.034069),
-                                    new LatLng(42.142630, -88.034159),
-                                    new LatLng(42.142597, -88.034207)));
-
-
-                    // Set listeners for click events.
-                    polyline2.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-
-                    polyline3 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.142597, -88.034207),
-                                    new LatLng(42.142718, -88.034235),
-                                    new LatLng(42.142827, -88.034280),
-                                    new LatLng(42.142914, -88.034353),
-                                    new LatLng(42.142999, -88.034457),
-                                    new LatLng(42.143048, -88.034553),
-                                    new LatLng(42.143088, -88.034715),
-                                    new LatLng(42.143156, -88.035014),
-                                    new LatLng(42.143214, -88.035263),
-                                    new LatLng(42.143304, -88.035680),
-                                    new LatLng(42.143304, -88.035863),
-                                    new LatLng(42.143290, -88.036214),
-                                    new LatLng(42.143278, -88.036635),
-                                    new LatLng(42.143271, -88.036975),
-                                    new LatLng(42.143264, -88.037340),
-                                    new LatLng(42.143263, -88.037407),
-                                    new LatLng(42.143254, -88.038188),
-                                    new LatLng(42.143251, -88.038520),
-                                    new LatLng(42.143256, -88.038663),
-                                    new LatLng(42.143278, -88.038818),
-                                    new LatLng(42.143312, -88.038925),
-                                    new LatLng(42.143373, -88.039055),
-                                    new LatLng(42.143470, -88.039197),
-                                    new LatLng(42.143690, -88.039451),
-                                    new LatLng(42.143801, -88.039556),
-                                    new LatLng(42.144041, -88.039712),
-                                    new LatLng(42.144288, -88.039830),
-                                    new LatLng(42.144345, -88.039850),
-                                    new LatLng(42.144535, -88.039891),
-                                    new LatLng(42.144915, -88.039953),
-                                    new LatLng(42.144997, -88.039988),
-                                    new LatLng(42.145069, -88.040038),
-                                    new LatLng(42.145124, -88.040100),
-                                    new LatLng(42.145188, -88.040220),
-                                    new LatLng(42.145224, -88.040309),
-                                    new LatLng(42.145252, -88.040402),
-                                    new LatLng(42.145266, -88.040485),
-                                    new LatLng(42.145263, -88.040687),
-                                    new LatLng(42.145231, -88.041416),
-                                    new LatLng(42.145234, -88.041611),
-                                    new LatLng(42.145259, -88.041939),
-                                    new LatLng(42.145286, -88.042181),
-                                    new LatLng(42.145320, -88.042453),
-                                    new LatLng(42.145345, -88.042684),
-                                    new LatLng(42.145387, -88.043060),
-                                    new LatLng(42.145412, -88.043205),
-                                    new LatLng(42.145448, -88.043339),
-                                    new LatLng(42.145533, -88.043523),
-                                    new LatLng(42.145634, -88.043658),
-                                    new LatLng(42.145762, -88.043757),
-                                    new LatLng(42.145884, -88.043813),
-                                    new LatLng(42.146165, -88.043913),
-                                    new LatLng(42.146785, -88.044077),
-                                    new LatLng(42.146895, -88.044123),
-                                    new LatLng(42.146966, -88.044185),
-                                    new LatLng(42.147030, -88.044288),
-                                    new LatLng(42.147063, -88.044412),
-                                    new LatLng(42.147078, -88.044522),
-                                    new LatLng(42.147064, -88.044646),
-                                    new LatLng(42.147015, -88.044862),
-                                    new LatLng(42.146961, -88.045110),
-                                    new LatLng(42.146904, -88.045406),
-                                    new LatLng(42.146821, -88.045676),
-                                    new LatLng(42.146779, -88.045787),
-                                    new LatLng(42.146723, -88.045893),
-                                    new LatLng(42.146661, -88.045989),
-                                    new LatLng(42.146565, -88.046119),
-                                    new LatLng(42.146522, -88.046159),
-                                    new LatLng(42.146345, -88.046324),
-                                    new LatLng(42.145990, -88.046623),
-                                    new LatLng(42.145231, -88.047264),
-                                    new LatLng(42.145136, -88.047344),
-                                    new LatLng(42.144896, -88.047631),
-                                    new LatLng(42.144649, -88.047944),
-                                    new LatLng(42.144407, -88.048252),
-                                    new LatLng(42.144337, -88.048363),
-                                    new LatLng(42.144268, -88.048612),
-                                    new LatLng(42.144259, -88.048718),
-                                    new LatLng(42.144257, -88.048886),
-                                    new LatLng(42.144274, -88.049284),
-                                    new LatLng(42.144296, -88.049854),
-                                    new LatLng(42.144301, -88.049940),
-                                    new LatLng(42.144312, -88.050242),
-                                    new LatLng(42.144305, -88.050342),
-                                    new LatLng(42.144273, -88.050554),
-                                    new LatLng(42.144267, -88.050697),
-                                    new LatLng(42.144307, -88.051607),
-                                    new LatLng(42.144289, -88.051810),
-                                    new LatLng(42.144256, -88.051979),
-                                    new LatLng(42.144218, -88.052140),
-                                    new LatLng(42.144176, -88.052311),
-                                    new LatLng(42.144125, -88.052512),
-                                    new LatLng(42.143990, -88.053006),
-                                    new LatLng(42.143861, -88.053590),
-                                    new LatLng(42.143809, -88.053810),
-                                    new LatLng(42.143781, -88.053923),
-                                    new LatLng(42.143734, -88.054020),
-                                    new LatLng(42.143665, -88.054138),
-                                    new LatLng(42.143155, -88.054922),
-                                    new LatLng(42.143096, -88.054885),
-                                    new LatLng(42.142994, -88.054832),
-                                    new LatLng(42.142929, -88.054822),
-                                    new LatLng(42.142793, -88.054779),
-                                    new LatLng(42.142628, -88.054735),
-                                    new LatLng(42.142540, -88.054712),
-                                    new LatLng(42.142351, -88.054622),
-                                    new LatLng(42.142284, -88.054576),
-                                    new LatLng(42.142226, -88.054546),
-                                    new LatLng(42.142131, -88.054463),
-                                    new LatLng(42.142029, -88.054358),
-                                    new LatLng(42.141939, -88.054246),
-                                    new LatLng(42.141926, -88.054230),
-                                    new LatLng(42.141899, -88.054194),
-                                    new LatLng(42.141871, -88.054153),
-                                    new LatLng(42.141784, -88.054027),
-                                    new LatLng(42.141598, -88.053754),
-                                    new LatLng(42.141465, -88.053527),
-                                    new LatLng(42.141299, -88.053145),
-                                    new LatLng(42.141063, -88.052574),
-                                    new LatLng(42.141005, -88.052389),
-                                    new LatLng(42.140984, -88.052270),
-                                    new LatLng(42.140971, -88.051961),
-                                    new LatLng(42.140985, -88.051834),
-                                    new LatLng(42.141075, -88.051529),
-                                    new LatLng(42.141259, -88.051148),
-                                    new LatLng(42.141308, -88.051049),
-                                    new LatLng(42.141337, -88.050986),
-                                    new LatLng(42.141355, -88.050950),
-                                    new LatLng(42.141523, -88.050578),
-                                    new LatLng(42.141625, -88.050353),
-                                    new LatLng(42.141778, -88.049975),
-                                    new LatLng(42.141929, -88.049590),
-                                    new LatLng(42.141987, -88.049452),
-                                    new LatLng(42.142041, -88.049289),
-                                    new LatLng(42.142070, -88.049145),
-                                    new LatLng(42.142064, -88.049028),
-                                    new LatLng(42.142018, -88.048863),
-                                    new LatLng(42.141926, -88.048566),
-                                    new LatLng(42.141900, -88.048435)
-                            ));
-                    // Set listeners for click events.
-                    polyline3.setColor(Color.RED);
-                    polyline3.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline4 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.142597, -88.034207),
-                                    new LatLng(42.142469, -88.034197),
-                                    new LatLng(42.142314, -88.034184),
-                                    new LatLng(42.142267, -88.034180),
-                                    new LatLng(42.142160, -88.034187),
-                                    new LatLng(42.142089, -88.034190),
-                                    new LatLng(42.141809, -88.034252),
-                                    new LatLng(42.141662, -88.034285),
-                                    new LatLng(42.141421, -88.034347),
-                                    new LatLng(42.141268, -88.034381),
-                                    new LatLng(42.141225, -88.034391),
-                                    new LatLng(42.141122, -88.034403),
-                                    new LatLng(42.140917, -88.034411),
-                                    new LatLng(42.140379, -88.034362),
-                                    new LatLng(42.140274, -88.034356),
-                                    new LatLng(42.140180, -88.034374),
-                                    new LatLng(42.140142, -88.034394),
-                                    new LatLng(42.140078, -88.034439),
-                                    new LatLng(42.139998, -88.034504),
-                                    new LatLng(42.139934, -88.034592),
-                                    new LatLng(42.139884, -88.034672),
-                                    new LatLng(42.139822, -88.034796),
-                                    new LatLng(42.139769, -88.034959),
-                                    new LatLng(42.139760, -88.035034),
-                                    new LatLng(42.139753, -88.035114),
-                                    new LatLng(42.139755, -88.035193),
-                                    new LatLng(42.139775, -88.035484),
-                                    new LatLng(42.139777, -88.035581),
-                                    new LatLng(42.139768, -88.035652),
-                                    new LatLng(42.139750, -88.035737),
-                                    new LatLng(42.139693, -88.035860),
-                                    new LatLng(42.139589, -88.036025),
-                                    new LatLng(42.139539, -88.036120),
-                                    new LatLng(42.139510, -88.036193),
-                                    new LatLng(42.139475, -88.036315),
-                                    new LatLng(42.139457, -88.036443),
-                                    new LatLng(42.139452, -88.036519),
-                                    new LatLng(42.139446, -88.036644),
-                                    new LatLng(42.139466, -88.037113),
-                                    new LatLng(42.139473, -88.038048),
-                                    new LatLng(42.139464, -88.038366),
-                                    new LatLng(42.139471, -88.038470),
-                                    new LatLng(42.139490, -88.038614),
-                                    new LatLng(42.139505, -88.038879),
-                                    new LatLng(42.139510, -88.039133),
-                                    new LatLng(42.139513, -88.039350),
-                                    new LatLng(42.139510, -88.039535),
-                                    new LatLng(42.139491, -88.039753),
-                                    new LatLng(42.139467, -88.040190),
-                                    new LatLng(42.139461, -88.040429),
-                                    new LatLng(42.139463, -88.040503),
-                                    new LatLng(42.139495, -88.040658),
-                                    new LatLng(42.139517, -88.040749),
-                                    new LatLng(42.139545, -88.040869),
-                                    new LatLng(42.139568, -88.040979),
-                                    new LatLng(42.139621, -88.041154),
-                                    new LatLng(42.139672, -88.041259),
-                                    new LatLng(42.139755, -88.041400),
-                                    new LatLng(42.139913, -88.041464),
-                                    new LatLng(42.140756, -88.041427),
-                                    new LatLng(42.140838, -88.041427),
-                                    new LatLng(42.140928, -88.041426),
-                                    new LatLng(42.140977, -88.041431),
-                                    new LatLng(42.141020, -88.041445),
-                                    new LatLng(42.141073, -88.041473),
-                                    new LatLng(42.141193, -88.041570),
-                                    new LatLng(42.141254, -88.041685),
-                                    new LatLng(42.141273, -88.041737),
-                                    new LatLng(42.141287, -88.041840),
-                                    new LatLng(42.141301, -88.042099)
-                            ));
-                    // Set listeners for click events.
-                    polyline4.setColor(Color.RED);
-                    polyline4.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline5 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.141301, -88.042099),
-                                    new LatLng(42.141302, -88.042198),
-                                    new LatLng(42.141298, -88.042239),
-                                    new LatLng(42.141301, -88.042348),
-                                    new LatLng(42.141285, -88.042479),
-                                    new LatLng(42.141280, -88.042593),
-                                    new LatLng(42.141270, -88.042709),
-                                    new LatLng(42.141265, -88.042772),
-                                    new LatLng(42.141260, -88.042917),
-                                    new LatLng(42.141282, -88.043050),
-                                    new LatLng(42.141442, -88.043475),
-                                    new LatLng(42.141499, -88.043620),
-                                    new LatLng(42.141600, -88.043933),
-                                    new LatLng(42.141638, -88.044111),
-                                    new LatLng(42.141628, -88.044194),
-                                    new LatLng(42.141594, -88.044329),
-                                    new LatLng(42.141380, -88.044877),
-                                    new LatLng(42.141357, -88.045058),
-                                    new LatLng(42.141366, -88.045233),
-                                    new LatLng(42.141396, -88.045436),
-                                    new LatLng(42.141405, -88.045549),
-                                    new LatLng(42.141395, -88.045698),
-                                    new LatLng(42.141368, -88.045791),
-                                    new LatLng(42.141352, -88.046107),
-                                    new LatLng(42.141357, -88.046384),
-                                    new LatLng(42.141539, -88.047123),
-                                    new LatLng(42.141579, -88.047288),
-                                    new LatLng(42.141612, -88.047424),
-                                    new LatLng(42.141708, -88.047706),
-                                    new LatLng(42.141811, -88.048087),
-                                    new LatLng(42.141860, -88.048265),
-                                    new LatLng(42.141900, -88.048435)
-                            ));
-                    // Set listeners for click events.
-                    polyline5.setColor(Color.RED);
-                    polyline5.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline7 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.140207, -88.067226),
-                                    new LatLng(42.140441, -88.066485),
-                                    new LatLng(42.140509, -88.066349),
-                                    new LatLng(42.140554, -88.066303),
-                                    new LatLng(42.140643, -88.066236),
-                                    new LatLng(42.140732, -88.066199),
-                                    new LatLng(42.140813, -88.066186),
-                                    new LatLng(42.140893, -88.066199),
-                                    new LatLng(42.140985, -88.066239),
-                                    new LatLng(42.141228, -88.066384),
-                                    new LatLng(42.141295, -88.066403),
-                                    new LatLng(42.141650, -88.066407),
-                                    new LatLng(42.141818, -88.066374),
-                                    new LatLng(42.141976, -88.066296),
-                                    new LatLng(42.143107, -88.065486),
-                                    new LatLng(42.143165, -88.065396),
-                                    new LatLng(42.143221, -88.065277),
-                                    new LatLng(42.143257, -88.065007),
-                                    new LatLng(42.143268, -88.064875),
-                                    new LatLng(42.143251, -88.064645),
-                                    new LatLng(42.143245, -88.064588),
-                                    new LatLng(42.143217, -88.064445),
-                                    new LatLng(42.143187, -88.064256),
-                                    new LatLng(42.143173, -88.064151),
-                                    new LatLng(42.143185, -88.063515),
-                                    new LatLng(42.143113, -88.063053),
-                                    new LatLng(42.143114, -88.063033),
-                                    new LatLng(42.143116, -88.063009),
-                                    new LatLng(42.143122, -88.062988),
-                                    new LatLng(42.143127, -88.062971),
-                                    new LatLng(42.143137, -88.062943),
-                                    new LatLng(42.143147, -88.062896),
-                                    new LatLng(42.143153, -88.062880),
-                                    new LatLng(42.143164, -88.062843),
-                                    new LatLng(42.143170, -88.062825),
-                                    new LatLng(42.143176, -88.062811),
-                                    new LatLng(42.143187, -88.062786),
-                                    new LatLng(42.143198, -88.062767),
-                                    new LatLng(42.143220, -88.062740),
-                                    new LatLng(42.143255, -88.062706),
-                                    new LatLng(42.143326, -88.062652),
-                                    new LatLng(42.143397, -88.062611),
-                                    new LatLng(42.143460, -88.062554),
-                                    new LatLng(42.143526, -88.062491),
-                                    new LatLng(42.143583, -88.062427),
-                                    new LatLng(42.143653, -88.062324),
-                                    new LatLng(42.143705, -88.062227),
-                                    new LatLng(42.143745, -88.062131),
-                                    new LatLng(42.143785, -88.062000),
-                                    new LatLng(42.143819, -88.061868),
-                                    new LatLng(42.143831, -88.061794),
-                                    new LatLng(42.143842, -88.061682),
-                                    new LatLng(42.143847, -88.061580),
-                                    new LatLng(42.143846, -88.061394),
-                                    new LatLng(42.143848, -88.061281),
-                                    new LatLng(42.143853, -88.061216),
-                                    new LatLng(42.143866, -88.061127),
-                                    new LatLng(42.143916, -88.060913),
-                                    new LatLng(42.144279, -88.060130),
-                                    new LatLng(42.144396, -88.059762),
-                                    new LatLng(42.144439, -88.059606),
-                                    new LatLng(42.144527, -88.059414),
-                                    new LatLng(42.144663, -88.059214),
-                                    new LatLng(42.144697, -88.059137),
-                                    new LatLng(42.144732, -88.059056),
-                                    new LatLng(42.144753, -88.058941),
-                                    new LatLng(42.144756, -88.058852),
-                                    new LatLng(42.144743, -88.058775),
-                                    new LatLng(42.144677, -88.058638),
-                                    new LatLng(42.144553, -88.058457),
-                                    new LatLng(42.144495, -88.058400),
-                                    new LatLng(42.144357, -88.058324),
-                                    new LatLng(42.144097, -88.058199),
-                                    new LatLng(42.143984, -88.058122),
-                                    new LatLng(42.143912, -88.058018),
-                                    new LatLng(42.143844, -88.057804),
-                                    new LatLng(42.143817, -88.057412),
-                                    new LatLng(42.143815, -88.057133),
-                                    new LatLng(42.143811, -88.056792),
-                                    new LatLng(42.143807, -88.056668),
-                                    new LatLng(42.143787, -88.056055),
-                                    new LatLng(42.143675, -88.055635),
-                                    new LatLng(42.143551, -88.055354),
-                                    new LatLng(42.143466, -88.055216),
-                                    new LatLng(42.143296, -88.055039),
-                                    new LatLng(42.143155, -88.054922)
-                            ));
-                    polyline7.setColor(Color.BLACK);
-                    polyline7.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline8 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.142627, -88.054735),
-                                    new LatLng(42.142589, -88.054802),
-                                    new LatLng(42.142548, -88.054860),
-                                    new LatLng(42.142493, -88.054893),
-                                    new LatLng(42.142435, -88.054916),
-                                    new LatLng(42.142386, -88.054917),
-                                    new LatLng(42.142344, -88.054909),
-                                    new LatLng(42.142226, -88.054837),
-                                    new LatLng(42.142174, -88.054770),
-                                    new LatLng(42.142152, -88.054714),
-                                    new LatLng(42.142139, -88.054690),
-                                    new LatLng(42.142131, -88.054649),
-                                    new LatLng(42.142123, -88.054581),
-                                    new LatLng(42.142119, -88.054517),
-                                    new LatLng(42.142132, -88.054464)
-                            ));
-
-                    polyline8.setColor(Color.RED);
-                    polyline8.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-
-                    polyline26 = mMap.addPolyline(new PolylineOptions()
-                            .clickable(true)
-                            .add(
-                                    new LatLng(42.140207, -88.067226),
-                                    new LatLng(42.140069, -88.067232),
-                                    new LatLng(42.139557, -88.067320),
-                                    new LatLng(42.139376, -88.067319),
-                                    new LatLng(42.139279, -88.067260),
-                                    new LatLng(42.139190, -88.067147),
-                                    new LatLng(42.139128, -88.066989),
-                                    new LatLng(42.139110, -88.066817),
-                                    new LatLng(42.139140, -88.066546),
-                                    new LatLng(42.139166, -88.066356),
-                                    new LatLng(42.139198, -88.066235),
-                                    new LatLng(42.139227, -88.065999),
-                                    new LatLng(42.139180, -88.065763),
-                                    new LatLng(42.139089, -88.065640),
-                                    new LatLng(42.138629, -88.065127),
-                                    new LatLng(42.138443, -88.064974),
-                                    new LatLng(42.138224, -88.064832),
-                                    new LatLng(42.137996, -88.064644),
-                                    new LatLng(42.137879, -88.064510),
-                                    new LatLng(42.137776, -88.064343),
-                                    new LatLng(42.137478, -88.063481),
-                                    new LatLng(42.137400, -88.063291),
-                                    new LatLng(42.137401, -88.063262),
-                                    new LatLng(42.137417, -88.063131)
-                            ));
-                    // Set listeners for click events.
-                    polyline26.setColor(Color.BLACK);
-                    polyline26.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+                    polyline1.setVisible(true);
+                    polyline2.setVisible(true);
+                    polyline3.setVisible(true);
+                    polyline4.setVisible(true);
+                    polyline5.setVisible(true);
+                    polyline7.setVisible(true);
+                    polyline8.setVisible(true);
+                    polyline26.setVisible(true);
 
                 }else {
                     polyline1.setVisible(false);
@@ -1999,127 +1573,16 @@ public class MapsFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked)
                 {
-                    LatLng parking1Location = new LatLng(42.14607732041637, -88.06725910505321);
-
-                    Bitmap p1 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker3 = Bitmap.createScaledBitmap(p1, width, height, false);
-                    BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
-
-                    parking1 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking1Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon3));
-
-
-                    LatLng parking2Location = new LatLng(42.14076656523424, -88.04246547617416);
-
-                    Bitmap p2 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker4 = Bitmap.createScaledBitmap(p2, width, height, false);
-                    BitmapDescriptor smallMarkerIcon4 = BitmapDescriptorFactory.fromBitmap(smallMarker4);
-
-                    parking2 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking2Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon4));
-
-                    LatLng parking3Location = new LatLng(42.142323, -88.046670);
-
-
-                    Bitmap p3 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker5 = Bitmap.createScaledBitmap(p3, width, height, false);
-                    BitmapDescriptor smallMarkerIcon5 = BitmapDescriptorFactory.fromBitmap(smallMarker5);
-
-                    parking3 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking3Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon5));
-
-                    LatLng parking4Location = new LatLng(42.143609, -88.040554);
-
-                    Bitmap p4 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker6 = Bitmap.createScaledBitmap(p4, width, height, false);
-                    BitmapDescriptor smallMarkerIcon6 = BitmapDescriptorFactory.fromBitmap(smallMarker6);
-
-                    parking4 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking4Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon6));
-
-                    LatLng parking5Location = new LatLng(42.135363, -88.091243);
-
-                    Bitmap p5 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker7 = Bitmap.createScaledBitmap(p5, width, height, false);
-                    BitmapDescriptor smallMarkerIcon7 = BitmapDescriptorFactory.fromBitmap(smallMarker7);
-
-                    parking5 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking5Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon7));
-
-                    LatLng parking6Location = new LatLng(42.136133, -88.078726);
-
-                    Bitmap p6 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker8 = Bitmap.createScaledBitmap(p6, width, height, false);
-                    BitmapDescriptor smallMarkerIcon8 = BitmapDescriptorFactory.fromBitmap(smallMarker8);
-
-                    parking6 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking6Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon8));
-
-                    LatLng parking7Location = new LatLng(42.142595, -88.061830);
-
-                    Bitmap p7 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker9 = Bitmap.createScaledBitmap(p7, width, height, false);
-                    BitmapDescriptor smallMarkerIcon9 = BitmapDescriptorFactory.fromBitmap(smallMarker9);
-
-                    parking7 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking7Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon9));
-
-                    LatLng parking8Location = new LatLng(42.145771, -88.074691);
-
-                    Bitmap p8 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker10 = Bitmap.createScaledBitmap(p8, width, height, false);
-                    BitmapDescriptor smallMarkerIcon10 = BitmapDescriptorFactory.fromBitmap(smallMarker10);
-
-                    parking8 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking8Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon10));
-
-                    LatLng parking9Location = new LatLng(42.141058, -88.068342);
-
-                    Bitmap p9 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker11 = Bitmap.createScaledBitmap(p9, width, height, false);
-                    BitmapDescriptor smallMarkerIcon11 = BitmapDescriptorFactory.fromBitmap(smallMarker11);
-
-                    parking9 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking9Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon11));
-
-                    LatLng parking10Location = new LatLng(42.143752, -88.067785);
-
-                    Bitmap p10 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
-                    Bitmap smallMarker12 = Bitmap.createScaledBitmap(p9, width, height, false);
-                    BitmapDescriptor smallMarkerIcon12 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
-
-                    parking10 = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(parking10Location)
-                                    .title("Parking")
-                                    .icon(smallMarkerIcon12));
+                    parking1.setVisible(true);
+                    parking2.setVisible(true);
+                    parking3.setVisible(true);
+                    parking4.setVisible(true);
+                    parking5.setVisible(true);
+                    parking6.setVisible(true);
+                    parking7.setVisible(true);
+                    parking8.setVisible(true);
+                    parking9.setVisible(true);
+                    parking10.setVisible(true);
 
                 }
                 else
@@ -2144,17 +1607,7 @@ public class MapsFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    final LatLng sleddingHillLocation = new LatLng(42.146534, -88.074027);
-
-                    Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_sled);
-                    Bitmap smallMarker2 = Bitmap.createScaledBitmap(b, width, height, false);
-                    BitmapDescriptor smallMarkerIcon2 = BitmapDescriptorFactory.fromBitmap(smallMarker2);
-
-                    sleddingHill = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(sleddingHillLocation)
-                                    .title("Sledding Hill")
-                                    .icon(smallMarkerIcon2));
+                    sleddingHill.setVisible(true);
                 }
                 else {
                     sleddingHill.setVisible(false);
@@ -2168,17 +1621,7 @@ public class MapsFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
-
-                    Bitmap a = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_water);
-                    Bitmap smallMarker1 = Bitmap.createScaledBitmap(a, width, height, false);
-                    BitmapDescriptor smallMarkerIcon1 = BitmapDescriptorFactory.fromBitmap(smallMarker1);
-
-                    deerGroveLake = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(deerGroveLakeLocation)
-                                    .title("Deer Grove Lake")
-                                    .icon(smallMarkerIcon1));
+                    deerGroveLake.setVisible(true);
                 }
                 else {
                     deerGroveLake.setVisible(false);
@@ -2191,21 +1634,24 @@ public class MapsFragment extends Fragment {
         flyingAreaCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    final LatLng flyingAreaLocation = new LatLng(42.144299151106324, -88.04209656306868);
-
-                    Bitmap m = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_flying);
-                    Bitmap smallMarker13 = Bitmap.createScaledBitmap(m, width, height, false);
-                    BitmapDescriptor smallMarkerIcon13 = BitmapDescriptorFactory.fromBitmap(smallMarker13);
-
-                    flyingArea = mMap.addMarker(
-                            new MarkerOptions()
-                                    .position(flyingAreaLocation)
-                                    .title("Airplane Flying Area")
-                                    .icon(smallMarkerIcon13));
+                if (isChecked) {
+                    flyingArea.setVisible(true);
+                } else {
+                    flyingArea.setVisible(false);
                 }
-                else {
-                   flyingArea.setVisible(false);
+            }
+        });
+
+        CheckBox campCheckbox = (CheckBox) view.findViewById(R.id.CampEnabled);
+
+        campCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    campArea.setVisible(true);
+
+                } else {
+                    campArea.setVisible(false);
                 }
             }
         });
@@ -2255,6 +1701,612 @@ public class MapsFragment extends Fragment {
             mMap.getUiSettings().setZoomControlsEnabled(true);
             mMap.getUiSettings().setCompassEnabled(true);
             mMap.getUiSettings().setTiltGesturesEnabled(true);
+
+            final LatLng deerGroveLakeLocation = new LatLng(42.145373, -88.070564);
+
+            Bitmap a = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_water);
+            Bitmap smallMarker1 = Bitmap.createScaledBitmap(a, width, height, false);
+            BitmapDescriptor smallMarkerIcon1 = BitmapDescriptorFactory.fromBitmap(smallMarker1);
+
+            deerGroveLake = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveLakeLocation)
+                            .title("Deer Grove Lake")
+                            .icon(smallMarkerIcon1));
+
+            final LatLng sleddingHillLocation = new LatLng(42.146534, -88.074027);
+
+            Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_sled);
+            Bitmap smallMarker2 = Bitmap.createScaledBitmap(b, width, height, false);
+            BitmapDescriptor smallMarkerIcon2 = BitmapDescriptorFactory.fromBitmap(smallMarker2);
+
+            sleddingHill = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(sleddingHillLocation)
+                            .title("Sledding Hill")
+                            .icon(smallMarkerIcon2));
+
+            LatLng parking1Location = new LatLng(42.14607732041637, -88.06725910505321);
+
+            Bitmap p1 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker3 = Bitmap.createScaledBitmap(p1, width, height, false);
+            BitmapDescriptor smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(smallMarker3);
+
+            parking1 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking1Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon3));
+
+
+            LatLng parking2Location = new LatLng(42.14076656523424, -88.04246547617416);
+
+            Bitmap p2 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker4 = Bitmap.createScaledBitmap(p2, width, height, false);
+            BitmapDescriptor smallMarkerIcon4 = BitmapDescriptorFactory.fromBitmap(smallMarker4);
+
+            parking2 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking2Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon4));
+
+            LatLng parking3Location = new LatLng(42.142323, -88.046670);
+
+
+            Bitmap p3 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker5 = Bitmap.createScaledBitmap(p3, width, height, false);
+            BitmapDescriptor smallMarkerIcon5 = BitmapDescriptorFactory.fromBitmap(smallMarker5);
+
+            parking3 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking3Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon5));
+
+            LatLng parking4Location = new LatLng(42.143609, -88.040554);
+
+            Bitmap p4 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker6 = Bitmap.createScaledBitmap(p4, width, height, false);
+            BitmapDescriptor smallMarkerIcon6 = BitmapDescriptorFactory.fromBitmap(smallMarker6);
+
+            parking4 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking4Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon6));
+
+            LatLng parking5Location = new LatLng(42.135363, -88.091243);
+
+            Bitmap p5 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker7 = Bitmap.createScaledBitmap(p5, width, height, false);
+            BitmapDescriptor smallMarkerIcon7 = BitmapDescriptorFactory.fromBitmap(smallMarker7);
+
+            parking5 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking5Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon7));
+
+            LatLng parking6Location = new LatLng(42.136133, -88.078726);
+
+            Bitmap p6 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker8 = Bitmap.createScaledBitmap(p6, width, height, false);
+            BitmapDescriptor smallMarkerIcon8 = BitmapDescriptorFactory.fromBitmap(smallMarker8);
+
+            parking6 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking6Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon8));
+
+            LatLng parking7Location = new LatLng(42.142595, -88.061830);
+
+            Bitmap p7 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker9 = Bitmap.createScaledBitmap(p7, width, height, false);
+            BitmapDescriptor smallMarkerIcon9 = BitmapDescriptorFactory.fromBitmap(smallMarker9);
+
+            parking7 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking7Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon9));
+
+            LatLng parking8Location = new LatLng(42.145771, -88.074691);
+
+            Bitmap p8 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker10 = Bitmap.createScaledBitmap(p8, width, height, false);
+            BitmapDescriptor smallMarkerIcon10 = BitmapDescriptorFactory.fromBitmap(smallMarker10);
+
+            parking8 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking8Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon10));
+
+            LatLng parking9Location = new LatLng(42.141058, -88.068342);
+
+            Bitmap p9 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker11 = Bitmap.createScaledBitmap(p9, width, height, false);
+            BitmapDescriptor smallMarkerIcon11 = BitmapDescriptorFactory.fromBitmap(smallMarker11);
+
+            parking9 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking9Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon11));
+
+            LatLng parking10Location = new LatLng(42.143752, -88.067785);
+
+            Bitmap p10 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_parking);
+            Bitmap smallMarker12 = Bitmap.createScaledBitmap(p9, width, height, false);
+            BitmapDescriptor smallMarkerIcon12 = BitmapDescriptorFactory.fromBitmap(smallMarker12);
+
+            parking10 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(parking10Location)
+                            .title("Parking")
+                            .icon(smallMarkerIcon12));
+
+            final LatLng flyingAreaLocation = new LatLng(42.144299151106324, -88.04209656306868);
+
+            Bitmap m = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_flying);
+            Bitmap smallMarker13 = Bitmap.createScaledBitmap(m, width, height, false);
+            BitmapDescriptor smallMarkerIcon13 = BitmapDescriptorFactory.fromBitmap(smallMarker13);
+
+            flyingArea = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(flyingAreaLocation)
+                            .title("Airplane Flying Area")
+                            .icon(smallMarkerIcon13));
+
+            final LatLng campLocation = new LatLng(42.14213517558058, -88.06123621177855);
+
+            Bitmap n = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_camp);
+            Bitmap smallMarker14 = Bitmap.createScaledBitmap(n, width, height, false);
+            BitmapDescriptor smallMarkerIcon14 = BitmapDescriptorFactory.fromBitmap(smallMarker14);
+
+            campArea = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(campLocation)
+                            .title("Camp Reinberg")
+                            .icon(smallMarkerIcon14));
+
+            polyline1 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.139379, -88.034060),
+                            new LatLng(42.139515, -88.034126),
+                            new LatLng(42.139999, -88.034504)));
+
+            // Set listeners for click events.
+            polyline1.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline2 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.142838, -88.033981),
+                            new LatLng(42.142716, -88.034069),
+                            new LatLng(42.142630, -88.034159),
+                            new LatLng(42.142597, -88.034207)));
+
+
+            // Set listeners for click events.
+            polyline2.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+
+            polyline3 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.142597, -88.034207),
+                            new LatLng(42.142718, -88.034235),
+                            new LatLng(42.142827, -88.034280),
+                            new LatLng(42.142914, -88.034353),
+                            new LatLng(42.142999, -88.034457),
+                            new LatLng(42.143048, -88.034553),
+                            new LatLng(42.143088, -88.034715),
+                            new LatLng(42.143156, -88.035014),
+                            new LatLng(42.143214, -88.035263),
+                            new LatLng(42.143304, -88.035680),
+                            new LatLng(42.143304, -88.035863),
+                            new LatLng(42.143290, -88.036214),
+                            new LatLng(42.143278, -88.036635),
+                            new LatLng(42.143271, -88.036975),
+                            new LatLng(42.143264, -88.037340),
+                            new LatLng(42.143263, -88.037407),
+                            new LatLng(42.143254, -88.038188),
+                            new LatLng(42.143251, -88.038520),
+                            new LatLng(42.143256, -88.038663),
+                            new LatLng(42.143278, -88.038818),
+                            new LatLng(42.143312, -88.038925),
+                            new LatLng(42.143373, -88.039055),
+                            new LatLng(42.143470, -88.039197),
+                            new LatLng(42.143690, -88.039451),
+                            new LatLng(42.143801, -88.039556),
+                            new LatLng(42.144041, -88.039712),
+                            new LatLng(42.144288, -88.039830),
+                            new LatLng(42.144345, -88.039850),
+                            new LatLng(42.144535, -88.039891),
+                            new LatLng(42.144915, -88.039953),
+                            new LatLng(42.144997, -88.039988),
+                            new LatLng(42.145069, -88.040038),
+                            new LatLng(42.145124, -88.040100),
+                            new LatLng(42.145188, -88.040220),
+                            new LatLng(42.145224, -88.040309),
+                            new LatLng(42.145252, -88.040402),
+                            new LatLng(42.145266, -88.040485),
+                            new LatLng(42.145263, -88.040687),
+                            new LatLng(42.145231, -88.041416),
+                            new LatLng(42.145234, -88.041611),
+                            new LatLng(42.145259, -88.041939),
+                            new LatLng(42.145286, -88.042181),
+                            new LatLng(42.145320, -88.042453),
+                            new LatLng(42.145345, -88.042684),
+                            new LatLng(42.145387, -88.043060),
+                            new LatLng(42.145412, -88.043205),
+                            new LatLng(42.145448, -88.043339),
+                            new LatLng(42.145533, -88.043523),
+                            new LatLng(42.145634, -88.043658),
+                            new LatLng(42.145762, -88.043757),
+                            new LatLng(42.145884, -88.043813),
+                            new LatLng(42.146165, -88.043913),
+                            new LatLng(42.146785, -88.044077),
+                            new LatLng(42.146895, -88.044123),
+                            new LatLng(42.146966, -88.044185),
+                            new LatLng(42.147030, -88.044288),
+                            new LatLng(42.147063, -88.044412),
+                            new LatLng(42.147078, -88.044522),
+                            new LatLng(42.147064, -88.044646),
+                            new LatLng(42.147015, -88.044862),
+                            new LatLng(42.146961, -88.045110),
+                            new LatLng(42.146904, -88.045406),
+                            new LatLng(42.146821, -88.045676),
+                            new LatLng(42.146779, -88.045787),
+                            new LatLng(42.146723, -88.045893),
+                            new LatLng(42.146661, -88.045989),
+                            new LatLng(42.146565, -88.046119),
+                            new LatLng(42.146522, -88.046159),
+                            new LatLng(42.146345, -88.046324),
+                            new LatLng(42.145990, -88.046623),
+                            new LatLng(42.145231, -88.047264),
+                            new LatLng(42.145136, -88.047344),
+                            new LatLng(42.144896, -88.047631),
+                            new LatLng(42.144649, -88.047944),
+                            new LatLng(42.144407, -88.048252),
+                            new LatLng(42.144337, -88.048363),
+                            new LatLng(42.144268, -88.048612),
+                            new LatLng(42.144259, -88.048718),
+                            new LatLng(42.144257, -88.048886),
+                            new LatLng(42.144274, -88.049284),
+                            new LatLng(42.144296, -88.049854),
+                            new LatLng(42.144301, -88.049940),
+                            new LatLng(42.144312, -88.050242),
+                            new LatLng(42.144305, -88.050342),
+                            new LatLng(42.144273, -88.050554),
+                            new LatLng(42.144267, -88.050697),
+                            new LatLng(42.144307, -88.051607),
+                            new LatLng(42.144289, -88.051810),
+                            new LatLng(42.144256, -88.051979),
+                            new LatLng(42.144218, -88.052140),
+                            new LatLng(42.144176, -88.052311),
+                            new LatLng(42.144125, -88.052512),
+                            new LatLng(42.143990, -88.053006),
+                            new LatLng(42.143861, -88.053590),
+                            new LatLng(42.143809, -88.053810),
+                            new LatLng(42.143781, -88.053923),
+                            new LatLng(42.143734, -88.054020),
+                            new LatLng(42.143665, -88.054138),
+                            new LatLng(42.143155, -88.054922),
+                            new LatLng(42.143096, -88.054885),
+                            new LatLng(42.142994, -88.054832),
+                            new LatLng(42.142929, -88.054822),
+                            new LatLng(42.142793, -88.054779),
+                            new LatLng(42.142628, -88.054735),
+                            new LatLng(42.142540, -88.054712),
+                            new LatLng(42.142351, -88.054622),
+                            new LatLng(42.142284, -88.054576),
+                            new LatLng(42.142226, -88.054546),
+                            new LatLng(42.142131, -88.054463),
+                            new LatLng(42.142029, -88.054358),
+                            new LatLng(42.141939, -88.054246),
+                            new LatLng(42.141926, -88.054230),
+                            new LatLng(42.141899, -88.054194),
+                            new LatLng(42.141871, -88.054153),
+                            new LatLng(42.141784, -88.054027),
+                            new LatLng(42.141598, -88.053754),
+                            new LatLng(42.141465, -88.053527),
+                            new LatLng(42.141299, -88.053145),
+                            new LatLng(42.141063, -88.052574),
+                            new LatLng(42.141005, -88.052389),
+                            new LatLng(42.140984, -88.052270),
+                            new LatLng(42.140971, -88.051961),
+                            new LatLng(42.140985, -88.051834),
+                            new LatLng(42.141075, -88.051529),
+                            new LatLng(42.141259, -88.051148),
+                            new LatLng(42.141308, -88.051049),
+                            new LatLng(42.141337, -88.050986),
+                            new LatLng(42.141355, -88.050950),
+                            new LatLng(42.141523, -88.050578),
+                            new LatLng(42.141625, -88.050353),
+                            new LatLng(42.141778, -88.049975),
+                            new LatLng(42.141929, -88.049590),
+                            new LatLng(42.141987, -88.049452),
+                            new LatLng(42.142041, -88.049289),
+                            new LatLng(42.142070, -88.049145),
+                            new LatLng(42.142064, -88.049028),
+                            new LatLng(42.142018, -88.048863),
+                            new LatLng(42.141926, -88.048566),
+                            new LatLng(42.141900, -88.048435)
+                    ));
+            // Set listeners for click events.
+            polyline3.setColor(Color.RED);
+            polyline3.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline4 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.142597, -88.034207),
+                            new LatLng(42.142469, -88.034197),
+                            new LatLng(42.142314, -88.034184),
+                            new LatLng(42.142267, -88.034180),
+                            new LatLng(42.142160, -88.034187),
+                            new LatLng(42.142089, -88.034190),
+                            new LatLng(42.141809, -88.034252),
+                            new LatLng(42.141662, -88.034285),
+                            new LatLng(42.141421, -88.034347),
+                            new LatLng(42.141268, -88.034381),
+                            new LatLng(42.141225, -88.034391),
+                            new LatLng(42.141122, -88.034403),
+                            new LatLng(42.140917, -88.034411),
+                            new LatLng(42.140379, -88.034362),
+                            new LatLng(42.140274, -88.034356),
+                            new LatLng(42.140180, -88.034374),
+                            new LatLng(42.140142, -88.034394),
+                            new LatLng(42.140078, -88.034439),
+                            new LatLng(42.139998, -88.034504),
+                            new LatLng(42.139934, -88.034592),
+                            new LatLng(42.139884, -88.034672),
+                            new LatLng(42.139822, -88.034796),
+                            new LatLng(42.139769, -88.034959),
+                            new LatLng(42.139760, -88.035034),
+                            new LatLng(42.139753, -88.035114),
+                            new LatLng(42.139755, -88.035193),
+                            new LatLng(42.139775, -88.035484),
+                            new LatLng(42.139777, -88.035581),
+                            new LatLng(42.139768, -88.035652),
+                            new LatLng(42.139750, -88.035737),
+                            new LatLng(42.139693, -88.035860),
+                            new LatLng(42.139589, -88.036025),
+                            new LatLng(42.139539, -88.036120),
+                            new LatLng(42.139510, -88.036193),
+                            new LatLng(42.139475, -88.036315),
+                            new LatLng(42.139457, -88.036443),
+                            new LatLng(42.139452, -88.036519),
+                            new LatLng(42.139446, -88.036644),
+                            new LatLng(42.139466, -88.037113),
+                            new LatLng(42.139473, -88.038048),
+                            new LatLng(42.139464, -88.038366),
+                            new LatLng(42.139471, -88.038470),
+                            new LatLng(42.139490, -88.038614),
+                            new LatLng(42.139505, -88.038879),
+                            new LatLng(42.139510, -88.039133),
+                            new LatLng(42.139513, -88.039350),
+                            new LatLng(42.139510, -88.039535),
+                            new LatLng(42.139491, -88.039753),
+                            new LatLng(42.139467, -88.040190),
+                            new LatLng(42.139461, -88.040429),
+                            new LatLng(42.139463, -88.040503),
+                            new LatLng(42.139495, -88.040658),
+                            new LatLng(42.139517, -88.040749),
+                            new LatLng(42.139545, -88.040869),
+                            new LatLng(42.139568, -88.040979),
+                            new LatLng(42.139621, -88.041154),
+                            new LatLng(42.139672, -88.041259),
+                            new LatLng(42.139755, -88.041400),
+                            new LatLng(42.139913, -88.041464),
+                            new LatLng(42.140756, -88.041427),
+                            new LatLng(42.140838, -88.041427),
+                            new LatLng(42.140928, -88.041426),
+                            new LatLng(42.140977, -88.041431),
+                            new LatLng(42.141020, -88.041445),
+                            new LatLng(42.141073, -88.041473),
+                            new LatLng(42.141193, -88.041570),
+                            new LatLng(42.141254, -88.041685),
+                            new LatLng(42.141273, -88.041737),
+                            new LatLng(42.141287, -88.041840),
+                            new LatLng(42.141301, -88.042099)
+                    ));
+            // Set listeners for click events.
+            polyline4.setColor(Color.RED);
+            polyline4.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline5 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.141301, -88.042099),
+                            new LatLng(42.141302, -88.042198),
+                            new LatLng(42.141298, -88.042239),
+                            new LatLng(42.141301, -88.042348),
+                            new LatLng(42.141285, -88.042479),
+                            new LatLng(42.141280, -88.042593),
+                            new LatLng(42.141270, -88.042709),
+                            new LatLng(42.141265, -88.042772),
+                            new LatLng(42.141260, -88.042917),
+                            new LatLng(42.141282, -88.043050),
+                            new LatLng(42.141442, -88.043475),
+                            new LatLng(42.141499, -88.043620),
+                            new LatLng(42.141600, -88.043933),
+                            new LatLng(42.141638, -88.044111),
+                            new LatLng(42.141628, -88.044194),
+                            new LatLng(42.141594, -88.044329),
+                            new LatLng(42.141380, -88.044877),
+                            new LatLng(42.141357, -88.045058),
+                            new LatLng(42.141366, -88.045233),
+                            new LatLng(42.141396, -88.045436),
+                            new LatLng(42.141405, -88.045549),
+                            new LatLng(42.141395, -88.045698),
+                            new LatLng(42.141368, -88.045791),
+                            new LatLng(42.141352, -88.046107),
+                            new LatLng(42.141357, -88.046384),
+                            new LatLng(42.141539, -88.047123),
+                            new LatLng(42.141579, -88.047288),
+                            new LatLng(42.141612, -88.047424),
+                            new LatLng(42.141708, -88.047706),
+                            new LatLng(42.141811, -88.048087),
+                            new LatLng(42.141860, -88.048265),
+                            new LatLng(42.141900, -88.048435)
+                    ));
+            // Set listeners for click events.
+            polyline5.setColor(Color.RED);
+            polyline5.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline7 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.140207, -88.067226),
+                            new LatLng(42.140441, -88.066485),
+                            new LatLng(42.140509, -88.066349),
+                            new LatLng(42.140554, -88.066303),
+                            new LatLng(42.140643, -88.066236),
+                            new LatLng(42.140732, -88.066199),
+                            new LatLng(42.140813, -88.066186),
+                            new LatLng(42.140893, -88.066199),
+                            new LatLng(42.140985, -88.066239),
+                            new LatLng(42.141228, -88.066384),
+                            new LatLng(42.141295, -88.066403),
+                            new LatLng(42.141650, -88.066407),
+                            new LatLng(42.141818, -88.066374),
+                            new LatLng(42.141976, -88.066296),
+                            new LatLng(42.143107, -88.065486),
+                            new LatLng(42.143165, -88.065396),
+                            new LatLng(42.143221, -88.065277),
+                            new LatLng(42.143257, -88.065007),
+                            new LatLng(42.143268, -88.064875),
+                            new LatLng(42.143251, -88.064645),
+                            new LatLng(42.143245, -88.064588),
+                            new LatLng(42.143217, -88.064445),
+                            new LatLng(42.143187, -88.064256),
+                            new LatLng(42.143173, -88.064151),
+                            new LatLng(42.143185, -88.063515),
+                            new LatLng(42.143113, -88.063053),
+                            new LatLng(42.143114, -88.063033),
+                            new LatLng(42.143116, -88.063009),
+                            new LatLng(42.143122, -88.062988),
+                            new LatLng(42.143127, -88.062971),
+                            new LatLng(42.143137, -88.062943),
+                            new LatLng(42.143147, -88.062896),
+                            new LatLng(42.143153, -88.062880),
+                            new LatLng(42.143164, -88.062843),
+                            new LatLng(42.143170, -88.062825),
+                            new LatLng(42.143176, -88.062811),
+                            new LatLng(42.143187, -88.062786),
+                            new LatLng(42.143198, -88.062767),
+                            new LatLng(42.143220, -88.062740),
+                            new LatLng(42.143255, -88.062706),
+                            new LatLng(42.143326, -88.062652),
+                            new LatLng(42.143397, -88.062611),
+                            new LatLng(42.143460, -88.062554),
+                            new LatLng(42.143526, -88.062491),
+                            new LatLng(42.143583, -88.062427),
+                            new LatLng(42.143653, -88.062324),
+                            new LatLng(42.143705, -88.062227),
+                            new LatLng(42.143745, -88.062131),
+                            new LatLng(42.143785, -88.062000),
+                            new LatLng(42.143819, -88.061868),
+                            new LatLng(42.143831, -88.061794),
+                            new LatLng(42.143842, -88.061682),
+                            new LatLng(42.143847, -88.061580),
+                            new LatLng(42.143846, -88.061394),
+                            new LatLng(42.143848, -88.061281),
+                            new LatLng(42.143853, -88.061216),
+                            new LatLng(42.143866, -88.061127),
+                            new LatLng(42.143916, -88.060913),
+                            new LatLng(42.144279, -88.060130),
+                            new LatLng(42.144396, -88.059762),
+                            new LatLng(42.144439, -88.059606),
+                            new LatLng(42.144527, -88.059414),
+                            new LatLng(42.144663, -88.059214),
+                            new LatLng(42.144697, -88.059137),
+                            new LatLng(42.144732, -88.059056),
+                            new LatLng(42.144753, -88.058941),
+                            new LatLng(42.144756, -88.058852),
+                            new LatLng(42.144743, -88.058775),
+                            new LatLng(42.144677, -88.058638),
+                            new LatLng(42.144553, -88.058457),
+                            new LatLng(42.144495, -88.058400),
+                            new LatLng(42.144357, -88.058324),
+                            new LatLng(42.144097, -88.058199),
+                            new LatLng(42.143984, -88.058122),
+                            new LatLng(42.143912, -88.058018),
+                            new LatLng(42.143844, -88.057804),
+                            new LatLng(42.143817, -88.057412),
+                            new LatLng(42.143815, -88.057133),
+                            new LatLng(42.143811, -88.056792),
+                            new LatLng(42.143807, -88.056668),
+                            new LatLng(42.143787, -88.056055),
+                            new LatLng(42.143675, -88.055635),
+                            new LatLng(42.143551, -88.055354),
+                            new LatLng(42.143466, -88.055216),
+                            new LatLng(42.143296, -88.055039),
+                            new LatLng(42.143155, -88.054922)
+                    ));
+            polyline7.setColor(Color.BLACK);
+            polyline7.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline8 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.142627, -88.054735),
+                            new LatLng(42.142589, -88.054802),
+                            new LatLng(42.142548, -88.054860),
+                            new LatLng(42.142493, -88.054893),
+                            new LatLng(42.142435, -88.054916),
+                            new LatLng(42.142386, -88.054917),
+                            new LatLng(42.142344, -88.054909),
+                            new LatLng(42.142226, -88.054837),
+                            new LatLng(42.142174, -88.054770),
+                            new LatLng(42.142152, -88.054714),
+                            new LatLng(42.142139, -88.054690),
+                            new LatLng(42.142131, -88.054649),
+                            new LatLng(42.142123, -88.054581),
+                            new LatLng(42.142119, -88.054517),
+                            new LatLng(42.142132, -88.054464)
+                    ));
+
+            polyline8.setColor(Color.RED);
+            polyline8.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
+            polyline26 = mMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(
+                            new LatLng(42.140207, -88.067226),
+                            new LatLng(42.140069, -88.067232),
+                            new LatLng(42.139557, -88.067320),
+                            new LatLng(42.139376, -88.067319),
+                            new LatLng(42.139279, -88.067260),
+                            new LatLng(42.139190, -88.067147),
+                            new LatLng(42.139128, -88.066989),
+                            new LatLng(42.139110, -88.066817),
+                            new LatLng(42.139140, -88.066546),
+                            new LatLng(42.139166, -88.066356),
+                            new LatLng(42.139198, -88.066235),
+                            new LatLng(42.139227, -88.065999),
+                            new LatLng(42.139180, -88.065763),
+                            new LatLng(42.139089, -88.065640),
+                            new LatLng(42.138629, -88.065127),
+                            new LatLng(42.138443, -88.064974),
+                            new LatLng(42.138224, -88.064832),
+                            new LatLng(42.137996, -88.064644),
+                            new LatLng(42.137879, -88.064510),
+                            new LatLng(42.137776, -88.064343),
+                            new LatLng(42.137478, -88.063481),
+                            new LatLng(42.137400, -88.063291),
+                            new LatLng(42.137401, -88.063262),
+                            new LatLng(42.137417, -88.063131)
+                    ));
+            // Set listeners for click events.
+            polyline26.setColor(Color.BLACK);
+            polyline26.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
         }
     };
 
