@@ -78,15 +78,15 @@
         android:layout_height="30dp"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="40dp"
-        android:checked="true"
         android:buttonTint="@color/purple_700"
+        android:checked="true"
         android:text="Trail Access"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.975" />
 
     <CheckBox
         android:id="@+id/PavedTrailsEnabled"
@@ -142,15 +142,15 @@
         android:layout_height="30dp"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="90dp"
-        android:checked="true"
         android:buttonTint="@color/purple_700"
+        android:checked="true"
         android:text="Camps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.616"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.973" />
 
     <CheckBox
         android:id="@+id/ParkingEnable"

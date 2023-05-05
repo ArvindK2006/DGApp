@@ -12,13 +12,13 @@
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
+        android:layout_above="@+id/switchButton"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="2dp"
+        android:layout_marginBottom="34dp"
         android:choiceMode="singleChoice"
         android:listSelector=" #99AD85"
         android:scrollbars="horizontal|vertical"
@@ -32,9 +32,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="19dp"
         android:text="to sign up" />
 
 </RelativeLayout>
-
