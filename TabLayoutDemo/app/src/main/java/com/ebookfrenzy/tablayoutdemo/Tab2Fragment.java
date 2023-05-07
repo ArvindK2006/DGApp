@@ -87,9 +87,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                 mParam1 = getArguments().getString(ARG_PARAM1);
                 mParam2 = getArguments().getString(ARG_PARAM2);
             }
-            //SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                  //  .findFragmentById(R.id.map);
-            // mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -98,17 +95,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
 
-
-      /*  try{
-            SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                    .findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-        } catch(Exception e) {
-            String ex = e.getMessage();
-            e.printStackTrace();
-        }*/
-
-        /*  */
 
         return view;
     }
@@ -143,7 +129,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
                         .position(melbourneLocation)
                         .title("Melbourne")
                         .snippet("Population: 4,137,400")
-                        //.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher_arrow))); replaced this with the line below
                         .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
@@ -155,7 +140,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
 
         // Set listeners for click events.
         polyline1.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-//        googleMap.setOnPolylineClickListener(this);
 
         Polyline polyline2 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
@@ -316,9 +300,6 @@ public class Tab2Fragment extends Fragment implements OnMapReadyCallback{
         // Set listeners for click events.
         polyline3.setColor(Color.RED);
         polyline3.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-//        polyline3.setTag("one");
-//
-//        customPolylineArrayList.add(new CustomPolyline(polyline3, "Red Paved Loop", "2.82 mi"));
 
         Polyline polyline4 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)

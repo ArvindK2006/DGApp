@@ -17,15 +17,13 @@ public class TabStateAdapter extends FragmentStateAdapter{
     public Fragment createFragment(int position){
         switch(position){
             case 0:
-                return new Tab1Fragment();
+                return new HomeFragment();
             case 1:
                 return new MapsFragment();
             case 2:
-                return new Tab3Fragment();
+                return new EventsFragment();
             case 3:
-                return new Tab4Fragment();
-            //case 3:
-              //  return new SignUpFragment();
+                return new AboutFragment();
             default:
                 return null;
         }

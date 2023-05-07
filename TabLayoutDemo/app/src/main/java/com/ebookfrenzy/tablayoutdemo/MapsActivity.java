@@ -83,12 +83,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setMinZoomPreference(11.0f);
         mMap.setMaxZoomPreference(19.0f);
 
-        // Add a marker in Sydney and move the camera
         LatLng middle = new LatLng(42.144, -88.069);
-//        LatLng deerGrove = new LatLng(42.14384682495575, -88.06887273075864);
-//        LatLng deerGroveEast = new LatLng(42.14572971060655, -88.04575745123859);
-//        mMap.addMarker(new MarkerOptions().position(deerGrove).title("Deer Grove Marker"));
-//        mMap.addMarker(new MarkerOptions().position(deerGroveEast).title("Deer Grove East Marker"));
 
         float zoomLevel = 13.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(middle, zoomLevel));
@@ -154,7 +149,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Set listeners for click events.
         polyline1.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-//        googleMap.setOnPolylineClickListener(this);
 
         Polyline polyline2 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
@@ -315,9 +309,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Set listeners for click events.
         polyline3.setColor(Color.RED);
         polyline3.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
-//        polyline3.setTag("one");
-//
-//        customPolylineArrayList.add(new CustomPolyline(polyline3, "Red Paved Loop", "2.82 mi"));
 
         Polyline polyline4 = mMap.addPolyline(new PolylineOptions()
                 .clickable(true)
@@ -1972,16 +1963,5 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void satelliteMap(View view) {
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
-
-
-//    @Override
-//    public void onPolylineClick(Polyline polyline) {
-//        for (int x=0; x < customPolylineArrayList.size(); x++){
-//            if(customPolylineObj.name.equalsIgnoreCase(polyline.getTag().toString())){
-//                marker = mMap.addMarker(new MarkerOptions().title(customPolylineObj.name));
-//
-//            }
-//        }
-//    }
 
 }

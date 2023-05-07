@@ -11,10 +11,8 @@ import android.widget.Toast;
 
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -45,10 +43,6 @@ public class SignUpFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-  /* Session session;
-    Properties props;
-    final String username = "raghus06@yahoo.com";*/
-
     public SignUpFragment() {
         // Required empty public constructor
     }
@@ -78,15 +72,7 @@ public class SignUpFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
-            /*txtEmail = txtEmail.findViewById(R.id.txtEmail);
-            txtMessage = txtMessage.findViewById(R.id.txtMessage);
-            btnSend = btnSend.findViewById(R.id.btnSend);*/
-
-
-           // final String username = "raghus06@yahoo.com";
         }
-        //View.active
     }
 
 
@@ -111,57 +97,23 @@ public class SignUpFragment extends Fragment {
                 email.setVisibility(View.GONE);
                 displayEvent.setVisibility(View.GONE);
 
-               Tab3Fragment fragThree = new Tab3Fragment();
+               EventsFragment fragThree = new EventsFragment();
 
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Tab3Fragment());
+                fr.replace(R.id.fragment_container, new EventsFragment());
                 fr.replace(R.id.fragment_container, fragThree);
 
                 fr.addToBackStack(null);
 
                 fr.commit();
-
-
-             /*  FragmentManager mgr = getActivity().getSupportFragmentManager();
-                List<Fragment> frgs = mgr.getFragments();
-                Tab3Fragment frg = (Tab3Fragment)frgs.get(2);
-                final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.detach(frg);
-                ft.attach(frg);
-                ft.commit();*/
-
-               /* FragmentTransaction fr = getActivity().getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Tab3Fragment());
-                fr.replace(R.id.fragment_container, fragThree);
-
-                fr.addToBackStack(null);
-                fr.commit();
-*/
-
-              /*  frg = (Tab3Fragment) getActivity().getSupportFragmentManager().findFragmentByTag("fragment_tab3");
-                final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.detach(frg);
-                ft.attach(frg);
-                ft.commit();*/
-                 /*Crashing app -- continue trying with this */
-
             }
         });
 
         Bundle args = getArguments();
         String eventDisplayed = args.getString("test");
-        //args.get
-
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_tab2, container, false);
 
         TextView display = (TextView) view.findViewById(R.id.display);
         display.setText(eventDisplayed);
-
-        //display.setText();
-
-        //setContentView(View.id);
-
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,8 +125,6 @@ public class SignUpFragment extends Fragment {
                     final String username = "raghus06@yahoo.com";
                     final String password = "eqqkkevzohdkbaon";
 
-                    //EditText messageToSend = (EditText) view.findViewById(R.id.txtMessage);
-                    //String body = messageToSend.getText().toString();
                     String body = eventDisplayed;
 
                     EditText txtEmail = (EditText) view.findViewById(R.id.txtEmail);
@@ -182,7 +132,6 @@ public class SignUpFragment extends Fragment {
 
                     Properties props = new Properties();
                     props.put("mail.smtp.auth", "true");
-                    //props.put("mail.smtp.starttls.enable", "true");
                     props.put("mail.smtp.ssl.enable", "true");
                     props.put("mail.smtp.host", "smtp.mail.yahoo.com");
                     props.put("mail.smtp.port", "465");
@@ -200,7 +149,6 @@ public class SignUpFragment extends Fragment {
                         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
                         message.setSubject("Thank you for signing up!");
                         message.setText(body);
-                        // Transport.send(message);
                         new Thread(new Runnable() {
                             @Override
                             public void run() {

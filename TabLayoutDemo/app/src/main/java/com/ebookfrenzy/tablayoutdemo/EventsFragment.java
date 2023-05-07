@@ -1,6 +1,5 @@
 package com.ebookfrenzy.tablayoutdemo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,15 +7,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.RequestQueue;
@@ -32,41 +25,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Tab3Fragment#newInstance} factory method to
+ * Use the {@link EventsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tab3Fragment extends Fragment {
+public class EventsFragment extends Fragment {
 
     Button button;
     Button toSignUp;
 
     private String selectedFromList;
-
-    //List<CalEvent> calEvents = new List<CalEvent>();
-
     ArrayList<String> myList = new ArrayList<String>();
+    ArrayList<String> allData = new ArrayList<String>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,7 +53,7 @@ public class Tab3Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Tab3Fragment() {
+    public EventsFragment() {
         // Required empty public constructor
     }
 
@@ -90,8 +66,8 @@ public class Tab3Fragment extends Fragment {
      * @return A new instance of fragment Tab1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tab3Fragment newInstance(String param1, String param2) {
-        Tab3Fragment fragment = new Tab3Fragment();
+    public static EventsFragment newInstance(String param1, String param2) {
+        EventsFragment fragment = new EventsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -107,28 +83,15 @@ public class Tab3Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        //  TextView tv = (TextView) findViewById(R.id.text_view_result);
-
-       // String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
-
-
     }
-
-    /*
-    public void openSignUpActivity(){
-        Intent intent = new Intent(getActivity(),SignUpActivity.class);
-        startActivity(intent);
-    }
-    */
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_tab3, container, false);
+        View view = inflater.inflate(R.layout.fragment_events, container, false);
 
-        //TextView events = view.findViewById(R.id.text_view_result);
         ListView events = view.findViewById(R.id.text_view_result);
         Button toSignUp = (Button) view.findViewById(R.id.switchButton);
         toSignUp.setOnClickListener(new View.OnClickListener() {
@@ -137,15 +100,8 @@ public class Tab3Fragment extends Fragment {
                 toSignUp.setVisibility(View.GONE);
                 events.setVisibility(View.GONE);
 
-                //code to send event info to sign up fragment will go here
-
-                //Started writing here 4/22/23
                 SignUpFragment suf = new SignUpFragment();
                 Bundle args = new Bundle();
-                //args.putString("test", "test Arvind");
-                //suf.setArguments(args);
-                //    fragment.setArguments(bundle);
-                //End 4/22/23
 
                 args.putString("test", selectedFromList);
                 suf.setArguments(args);
@@ -164,22 +120,17 @@ public class Tab3Fragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int index = i;
                 int selectedValue = index;
-                selectedFromList =(events.getItemAtPosition(index).toString());
+                //selectedFromList =(events.getItemAtPosition(index).toString());
+                if(index >= 0){
+                    selectedFromList =(allData.get(index).toString());
+                }
             }
         });
-
-        // When the button is clicked, the fragment_signup screen is shown
-        // however, the rest of the app is still visible and interactive
-       // TextView tv = (TextView) view.findViewById(R.id.text_view_result);
 
 
         ListView tv = view.findViewById(R.id.text_view_result);
 
         String url = "https://www.googleapis.com/calendar/v3/calendars/arvind.kakanavaram@gmail.com/events?key=AIzaSyDfy9Y4PaNilXfzGytXAeGZId0rKc25Yrc";
-
-       //String url = "https://jsonplaceholder.typicode.com/todos/1";
-        //uses this...
-      //  String url = "https://www.googleapis.com/calendar/v3/calendars/arvindrahil1@gmail.com/events?key=AIzaSyDZG1npYnrpLoaKugWo3lgycvvbZREAktg";
 
        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -187,13 +138,6 @@ public class Tab3Fragment extends Fragment {
            // public void onResponse(String response) {
 
                 try {
-
-                    //int userId = response.getInt("userId");
-                    //int id = response.getInt("id");
-                    //String title = response.getString("title");
-                    //boolean completed = response.getBoolean("completed");
-
-                    //tv.setText(userId + "\n" + id + "\n" + title + "\n" + completed);
 
                     JSONArray jsonArray = response.getJSONArray("items");
 
@@ -213,10 +157,10 @@ public class Tab3Fragment extends Fragment {
                                 }
                                 String iCalUID = item.getString("iCalUID");
                                 String html = item.getString("htmlLink");
-                                myList.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");
+                                allData.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");
+                                myList.add(summary + ", " + created + ", " + iCalUID + "\n\n");
                             }
                         }
-                       // tv.append( ", " + created + "\n\n");
 
                     }
                     ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),
@@ -227,7 +171,6 @@ public class Tab3Fragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                //tv.setText(response.toString());
 
             }
         }, new Response.ErrorListener() {
@@ -236,15 +179,6 @@ public class Tab3Fragment extends Fragment {
                 //tv.setText("error ");
             }
         });
-
-       //final List<String> ListElementsArrayList = new ArrayList<String>(Arrays.asList(myList));
-        /*
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),
-                android.R.layout.simple_list_item_1, myList);
-        events.setAdapter(adapter);
-        */
-
-
 
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         requestQueue.add(jsonObjectRequest);

@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Tab4Fragment#newInstance} factory method to
+ * Use the {@link AboutFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tab4Fragment extends Fragment {
+public class AboutFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +23,7 @@ public class Tab4Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Tab4Fragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -36,8 +36,8 @@ public class Tab4Fragment extends Fragment {
      * @return A new instance of fragment Tab1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tab4Fragment newInstance(String param1, String param2) {
-        Tab4Fragment fragment = new Tab4Fragment();
+    public static AboutFragment newInstance(String param1, String param2) {
+        AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,6 +58,6 @@ public class Tab4Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab4, container, false);
+        return inflater.inflate(R.layout.fragment_about, container, false);
     }
 }

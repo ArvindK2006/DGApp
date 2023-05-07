@@ -117,7 +117,6 @@ public class MapsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_maps, container, false);
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
 
         Button dMap = (Button) view.findViewById(R.id.defaultMap);
@@ -2438,16 +2437,4 @@ public class MapsFragment extends Fragment {
     public void satelliteMap(View view) {
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
-
-
-//    @Override
-//    public void onPolylineClick(Polyline polyline) {
-//        for (int x=0; x < customPolylineArrayList.size(); x++){
-//            if(customPolylineObj.name.equalsIgnoreCase(polyline.getTag().toString())){
-//                marker = mMap.addMarker(new MarkerOptions().title(customPolylineObj.name));
-//
-//            }
-//        }
-//    }
-
 }

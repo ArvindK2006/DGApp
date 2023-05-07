@@ -71,9 +71,6 @@ public class MainActivity extends AppCompatActivity {
                             case 3:
                                 tab.setText("About");
                                 break;
-                            //case 3:
-                              //  tab.setText("Sign Up");
-                               // break;
                         }
                     }
                 }).attach();
