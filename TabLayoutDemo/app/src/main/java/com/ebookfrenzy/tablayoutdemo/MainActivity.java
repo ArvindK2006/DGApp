@@ -76,29 +76,5 @@ public class MainActivity extends AppCompatActivity {
                 }).attach();
     }
 
-    @SuppressLint("RestrictedApi")
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        if(menu instanceof MenuBuilder){
-            MenuBuilder m = (MenuBuilder) menu;
-            m.setOptionalIconsVisible(true);
-        }
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.map:
-                Intent mapsIntent = new Intent(this, MapsActivity.class);
-                this.startActivity(mapsIntent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-    }
 
 }

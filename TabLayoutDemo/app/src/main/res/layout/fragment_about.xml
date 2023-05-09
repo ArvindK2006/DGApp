@@ -10,16 +10,28 @@
 
     <TextView
         android:id="@+id/aboutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="397dp"
+        android:layout_height="318dp"
         android:gravity="center"
         android:maxWidth="360dp"
         android:text="@string/DGInfo"
         android:textSize="@dimen/aboutText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152" />
+        app:layout_constraintVertical_bias="0.945" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="381dp"
+        android:layout_height="201dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/deergrove"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
 </androidx.constraintlayout.widget.ConstraintLayout>
