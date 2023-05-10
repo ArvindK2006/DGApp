@@ -1,5 +1,6 @@
 package com.ebookfrenzy.tablayoutdemo;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -37,13 +38,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MapsFragment extends Fragment {
+public class MapsFragment extends Fragment{
 
     private GoogleMap mMap;
-    CustomPolyline customPolylineObj;
-    ArrayList<CustomPolyline> customPolylineArrayList = new ArrayList<>();
 
-    private static final String TAG = MapsActivity.class.getSimpleName();
+    private static final String TAG = MapsFragment.class.getSimpleName();
     private static final int PATTERN_DASH_LENGTH_PX = 20;
     public static final int PATTERN_GAP_LENGTH_PX = 10;
     private static final PatternItem DASH = new Dash(PATTERN_DASH_LENGTH_PX);
@@ -99,6 +98,22 @@ public class MapsFragment extends Fragment {
     Marker trailAccessFour;
     Marker trailAccessFive;
     Marker trailAccessSix;
+
+    Marker deerGrove1;
+    Marker deerGrove2;
+    Marker deerGrove3;
+    Marker deerGrove4;
+    Marker deerGrove1W;
+    Marker deerGrove3W;
+    Marker deerGrove4W;
+    Marker deerGrove5W;
+
+    Marker entrance1;
+    Marker entrance2;
+    Marker entrance3;
+    Marker entrance4;
+    Marker entrance5;
+
 
     Marker parking1;
     Marker parking2;
@@ -331,6 +346,53 @@ public class MapsFragment extends Fragment {
             }
         });
 
+        CheckBox picnicCheckbox = (CheckBox) view.findViewById(R.id.PicnicEnable);
+
+        picnicCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    deerGrove1.setVisible(true);
+                    deerGrove2.setVisible(true);
+                    deerGrove3.setVisible(true);
+                    deerGrove4.setVisible(true);
+                    deerGrove1W.setVisible(true);
+                    deerGrove3W.setVisible(true);
+                    deerGrove4W.setVisible(true);
+                    deerGrove5W.setVisible(true);
+                } else {
+                    deerGrove1.setVisible(false);
+                    deerGrove2.setVisible(false);
+                    deerGrove3.setVisible(false);
+                    deerGrove4.setVisible(false);
+                    deerGrove1W.setVisible(false);
+                    deerGrove3W.setVisible(false);
+                    deerGrove4W.setVisible(false);
+                    deerGrove5W.setVisible(false);
+                }
+            }
+        });
+
+        CheckBox entranceCheckbox = (CheckBox) view.findViewById(R.id.EntranceEnable);
+
+        entranceCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    entrance1.setVisible(true);
+                    entrance2.setVisible(true);
+                    entrance3.setVisible(true);
+                    entrance4.setVisible(true);
+                    entrance5.setVisible(true);
+                } else {
+                    entrance1.setVisible(false);
+                    entrance2.setVisible(false);
+                    entrance3.setVisible(false);
+                    entrance4.setVisible(false);
+                    entrance5.setVisible(false);
+                }
+            }
+        });
         return view;
     }
 
@@ -614,8 +676,169 @@ public class MapsFragment extends Fragment {
                             .title("Trail Access")
                             .icon(smallMarkerIcon20));
 
+            final LatLng deerGroveOne = new LatLng(42.14184887568699, -88.04645242556933);
 
+            Bitmap u = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker21 = Bitmap.createScaledBitmap(u, width, height, false);
+            BitmapDescriptor smallMarkerIcon21 = BitmapDescriptorFactory.fromBitmap(smallMarker21);
 
+            deerGrove1 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveOne)
+                            .title("Deer Grove East #1 (Shelter)")
+                            .snippet("Capacity: 300")
+                            .icon(smallMarkerIcon21));
+
+            final LatLng deerGroveTwo = new LatLng(42.14324491562828, -88.0460323019405);
+
+            Bitmap v = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker22 = Bitmap.createScaledBitmap(v, width, height, false);
+            BitmapDescriptor smallMarkerIcon22 = BitmapDescriptorFactory.fromBitmap(smallMarker22);
+
+            deerGrove2 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveTwo)
+                            .title("Deer Grove East #2 (Shelter)")
+                            .snippet("Capacity: 300")
+                            .icon(smallMarkerIcon22));
+
+            final LatLng deerGroveThree = new LatLng(42.14291179469213, -88.04251514373345);
+
+            Bitmap w = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker23 = Bitmap.createScaledBitmap(v, width, height, false);
+            BitmapDescriptor smallMarkerIcon23 = BitmapDescriptorFactory.fromBitmap(smallMarker23);
+
+            deerGrove3 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveThree)
+                            .title("Deer Grove East #3 (Shelter)")
+                            .snippet("Capacity: 300")
+                            .icon(smallMarkerIcon23));
+
+            final LatLng deerGroveFour = new LatLng(42.14334932630808, -88.04031573237468);
+
+            Bitmap y = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker24 = Bitmap.createScaledBitmap(v, width, height, false);
+            BitmapDescriptor smallMarkerIcon24 = BitmapDescriptorFactory.fromBitmap(smallMarker24);
+
+            deerGrove4 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveFour)
+                            .title("Deer Grove East #4 (Shelter)")
+                            .snippet("Capacity: 300")
+                            .icon(smallMarkerIcon24));
+
+            final LatLng deerGroveOneW = new LatLng(42.141053629985485, -88.06736231190803);
+
+            Bitmap x = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker25 = Bitmap.createScaledBitmap(x, width, height, false);
+            BitmapDescriptor smallMarkerIcon25 = BitmapDescriptorFactory.fromBitmap(smallMarker25);
+
+            deerGrove1W = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveOneW)
+                            .title("Deer Grove #1 (Shelter)")
+                            .snippet("Capacity: 100")
+                            .icon(smallMarkerIcon25));
+
+            final LatLng deerGroveThreeW = new LatLng(42.14259056305335, -88.06674695727276);
+
+            Bitmap z = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker26 = Bitmap.createScaledBitmap(x, width, height, false);
+            BitmapDescriptor smallMarkerIcon26 = BitmapDescriptorFactory.fromBitmap(smallMarker26);
+
+            deerGrove3W = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveThreeW)
+                            .title("Deer Grove #3")
+                            .snippet("Capacity: 100")
+                            .icon(smallMarkerIcon26));
+
+            final LatLng deerGroveFourW = new LatLng(42.145952474075614, -88.06731373127894);
+
+            Bitmap ab = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker27 = Bitmap.createScaledBitmap(ab, width, height, false);
+            BitmapDescriptor smallMarkerIcon27 = BitmapDescriptorFactory.fromBitmap(smallMarker27);
+
+            deerGrove4W = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveFourW)
+                            .title("Deer Grove #4 (Shelter)")
+                            .snippet("Capacity: 150")
+                            .icon(smallMarkerIcon27));
+
+            final LatLng deerGroveFiveW = new LatLng(42.14593262431453, -88.07384070759947);
+
+            Bitmap ac = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_picnic);
+            Bitmap smallMarker28 = Bitmap.createScaledBitmap(ac, width, height, false);
+            BitmapDescriptor smallMarkerIcon28 = BitmapDescriptorFactory.fromBitmap(smallMarker28);
+
+            deerGrove5W = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(deerGroveFiveW)
+                            .title("Deer Grove #5 (Shelter)")
+                            .snippet("Capacity: 300")
+                            .icon(smallMarkerIcon28));
+
+            final LatLng entranceOne = new LatLng(42.13938675264347, -88.0431225379549);
+
+            Bitmap e1 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_gate);
+            Bitmap smallMarker29 = Bitmap.createScaledBitmap(e1, width, height, false);
+            BitmapDescriptor smallMarkerIcon29 = BitmapDescriptorFactory.fromBitmap(smallMarker29);
+
+            entrance1 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(entranceOne)
+                            .title("Entrance")
+                            .icon(smallMarkerIcon29));
+
+            final LatLng entranceTwo = new LatLng(42.14252111703622, -88.06287362442824);
+
+            Bitmap e2 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_gate);
+            Bitmap smallMarker30 = Bitmap.createScaledBitmap(e2, width, height, false);
+            BitmapDescriptor smallMarkerIcon30 = BitmapDescriptorFactory.fromBitmap(smallMarker30);
+
+            entrance2 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(entranceTwo)
+                            .title("Entrance")
+                            .icon(smallMarkerIcon30));
+
+            final LatLng entranceThree = new LatLng(42.14321570088183, -88.06304176100535);
+
+            Bitmap e3 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_gate);
+            Bitmap smallMarker31 = Bitmap.createScaledBitmap(e3, width, height, false);
+            BitmapDescriptor smallMarkerIcon31 = BitmapDescriptorFactory.fromBitmap(smallMarker31);
+
+            entrance3 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(entranceThree)
+                            .title("Entrance")
+                            .icon(smallMarkerIcon31));
+
+            final LatLng entranceFour = new LatLng(42.13554966883806, -88.0790990172769);
+
+            Bitmap e4 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_gate);
+            Bitmap smallMarker32 = Bitmap.createScaledBitmap(e4, width, height, false);
+            BitmapDescriptor smallMarkerIcon32 = BitmapDescriptorFactory.fromBitmap(smallMarker32);
+
+            entrance4 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(entranceFour)
+                            .title("Entrance")
+                            .icon(smallMarkerIcon32));
+
+            final LatLng entranceFive = new LatLng(42.13416188452777, -88.09058150625776);
+
+            Bitmap e5 = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_gate);
+            Bitmap smallMarker33 = Bitmap.createScaledBitmap(e5, width, height, false);
+            BitmapDescriptor smallMarkerIcon33 = BitmapDescriptorFactory.fromBitmap(smallMarker33);
+
+            entrance5 = mMap.addMarker(
+                    new MarkerOptions()
+                            .position(entranceFive)
+                            .title("Entrance")
+                            .icon(smallMarkerIcon33));
 
             polyline1 = mMap.addPolyline(new PolylineOptions()
                     .clickable(true)
@@ -634,7 +857,6 @@ public class MapsFragment extends Fragment {
                             new LatLng(42.142716, -88.034069),
                             new LatLng(42.142630, -88.034159),
                             new LatLng(42.142597, -88.034207)));
-
 
             // Set listeners for click events.
             polyline2.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
@@ -2424,9 +2646,11 @@ public class MapsFragment extends Fragment {
                             new LatLng(42.138475, -88.065261),
                             new LatLng(42.138569, -88.065080)
 
-                    ).color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.blue)));
+                    )
+                    .color(ContextCompat.getColor(getActivity().getApplicationContext(), R.color.blue)));
             // Set listeners for click events.
             polyline27.setWidth((float) POLYLINE_STROKE_WIDTH_PX);
+
         }
     };
 

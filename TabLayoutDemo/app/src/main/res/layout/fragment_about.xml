@@ -10,28 +10,43 @@
 
     <TextView
         android:id="@+id/aboutText"
-        android:layout_width="397dp"
-        android:layout_height="318dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:maxWidth="360dp"
         android:text="@string/DGInfo"
         android:textSize="@dimen/aboutText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="0.521" />
+
+    <TextView
+        android:id="@+id/aboutText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxWidth="360dp"
+        android:text="@string/DGInfo2"
+        android:textSize="@dimen/aboutText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="381dp"
-        android:layout_height="201dp"
+        android:layout_width="351dp"
+        android:layout_height="188dp"
         android:background="@drawable/image_border"
         android:src="@drawable/deergrove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.089" />
 </androidx.constraintlayout.widget.ConstraintLayout>
