@@ -110,10 +110,12 @@ public class SignUpFragment extends Fragment {
         });
 
         Bundle args = getArguments();
-        String eventDisplayed = args.getString("test");
+        String eventDisplayed = args.getString("sendEvent");
+        String displayed = eventDisplayed.replace(",", "\n\n");
 
         TextView display = (TextView) view.findViewById(R.id.display);
-        display.setText(eventDisplayed);
+        //display.setText(eventDisplayed);
+        display.setText(displayed);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,7 +127,9 @@ public class SignUpFragment extends Fragment {
                     final String username = "raghus06@yahoo.com";
                     final String password = "eqqkkevzohdkbaon";
 
-                    String body = eventDisplayed;
+                    //String body = eventDisplayed;
+                    String body = displayed;
+
 
                     EditText txtEmail = (EditText) view.findViewById(R.id.txtEmail);
                     String email = txtEmail.getText().toString();

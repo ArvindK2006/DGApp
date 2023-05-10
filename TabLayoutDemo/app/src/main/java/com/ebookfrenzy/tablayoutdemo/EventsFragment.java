@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -102,16 +103,17 @@ public class EventsFragment extends Fragment {
 
                 SignUpFragment suf = new SignUpFragment();
                 Bundle args = new Bundle();
+                    args.putString("sendEvent", selectedFromList);
+                    suf.setArguments(args);
 
-                args.putString("test", selectedFromList);
-                suf.setArguments(args);
+                    FragmentTransaction fr = getFragmentManager().beginTransaction();
+                    fr.replace(R.id.fragment_container, new SignUpFragment());
+                    fr.replace(R.id.fragment_container, suf);
 
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new SignUpFragment());
-                fr.replace(R.id.fragment_container, suf);
+                    fr.addToBackStack(null);
+                    fr.commit();
 
-                fr.addToBackStack(null);
-                fr.commit();
+
             }
         });
 
@@ -151,14 +153,17 @@ public class EventsFragment extends Fragment {
 
                                 DateFormat fmt;
                                 if (created.endsWith("Z")) {
-                                    fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                                    fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss'Z'");
+                                    //fmt.format()
+                                    //fmt = new SimpleDateFormat(created);
                                 } else {
-                                    fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                                    fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
+                                    //fmt = new SimpleDateFormat(created);
                                 }
                                 String iCalUID = item.getString("iCalUID");
                                 String html = item.getString("htmlLink");
                                 allData.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");
-                                myList.add(summary + ", " + created + ", " + iCalUID + "\n\n");
+                                myList.add(summary + ", " + created + "\n\n");
                             }
                         }
 
