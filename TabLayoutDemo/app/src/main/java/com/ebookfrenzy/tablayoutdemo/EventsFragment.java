@@ -151,15 +151,6 @@ public class EventsFragment extends Fragment {
                             if (summary.toLowerCase(Locale.ROOT).contains("work".toLowerCase(Locale.ROOT))) {
                                 String created = item.getString("created");
 
-                                DateFormat fmt;
-                                if (created.endsWith("Z")) {
-                                    fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss'Z'");
-                                    //fmt.format()
-                                    //fmt = new SimpleDateFormat(created);
-                                } else {
-                                    fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-                                    //fmt = new SimpleDateFormat(created);
-                                }
                                 String iCalUID = item.getString("iCalUID");
                                 String html = item.getString("htmlLink");
                                 allData.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");

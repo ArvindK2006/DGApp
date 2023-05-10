@@ -151,6 +151,8 @@ public class SignUpFragment extends Fragment {
                         Message message = new MimeMessage(session);
                         message.setFrom(new InternetAddress(username));
                         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+
                         message.setSubject("Thank you for signing up!");
                         message.setText(body);
                         new Thread(new Runnable() {
