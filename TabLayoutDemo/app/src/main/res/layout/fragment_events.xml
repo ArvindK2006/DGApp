@@ -32,8 +32,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="19dp"
-        android:text="to sign up" />
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="20dp"
+        android:enabled="false"
+        android:text="sign up" />
 
 </RelativeLayout>

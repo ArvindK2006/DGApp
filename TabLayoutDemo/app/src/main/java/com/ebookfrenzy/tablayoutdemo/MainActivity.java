@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void configureTabLayout(){
 
-        for(int i = 0; i < 4; i++){
-            //change to i < 4 when 4th tab works
+        for(int i = 0; i < 3; i++){
+            //change to i < 4 when adding events fragment
             binding.tabLayout.addTab(binding.tabLayout.newTab());
         }
         final FragmentStateAdapter adapter = new TabStateAdapter(this, binding.tabLayout.getTabCount());
@@ -65,10 +65,11 @@ public class MainActivity extends AppCompatActivity {
                             case 1:
                                 tab.setText("Map");
                                 break;
+                            //case 2:
+                             //   tab.setText("Events");
+                             //   break;
                             case 2:
-                                tab.setText("Events");
-                                break;
-                            case 3:
+                                //change to case 3 when adding events fragment
                                 tab.setText("About");
                                 break;
                         }

@@ -114,10 +114,10 @@
 
 
     <string name="DGInfo">
-        Deer Grove, one of the country’s first forest preserves, features nearly 2,000 acres of diverse habitat such as rolling upland forest, wooded ravines, wetlands and prairie.
+        Deer Grove, one of the country’s first forest preserves, features nearly 2,000 acres of diverse habitat such as rolling upland forest, wooded ravines, wetlands, and prairies.
     </string>
     <string name="DGInfo2">
-        We hope that through this app you get to enjoy what the Deer Grove Forest Preserve offers. Through the volunteering sign up, we hope for more people to join the service, as it is a way for you to give back to the community!
+        We hope that through this app you get to enjoy what the Deer Grove Forest Preserve offers. Through the volunteering sign up, we hope for more people to join, as it is a way for you to give back to the community!
     </string>
     <string name="aboutTitle">About the Forest Preserves</string>
     <string name="title_activity_maps">MapsActivity</string>

@@ -126,6 +126,7 @@ public class EventsFragment extends Fragment {
                 if(index >= 0){
                     selectedFromList =(allData.get(index).toString());
                 }
+                toSignUp.setEnabled(true);
             }
         });
 
@@ -149,12 +150,15 @@ public class EventsFragment extends Fragment {
 
                             String summary = item.getString("summary");
                             if (summary.toLowerCase(Locale.ROOT).contains("work".toLowerCase(Locale.ROOT))) {
-                                String created = item.getString("created");
+                                //String created = item.getString("created");
+                                String start = item.getString("start");
+                                String end = item.getString("end");
 
                                 String iCalUID = item.getString("iCalUID");
                                 String html = item.getString("htmlLink");
-                                allData.add(summary + ", " + created + ", " + iCalUID + ", " + html + "\n\n");
-                                myList.add(summary + ", " + created + "\n\n");
+                                allData.add(summary + ", " + start + ", " + iCalUID + ", " + html + "\n\n");
+                                myList.add(summary + ", " + "\n" + start + "\n\n");
+                                //myList.add(summary + "\n\n");
                             }
                         }
 

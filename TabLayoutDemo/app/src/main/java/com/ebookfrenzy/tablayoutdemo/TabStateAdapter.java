@@ -20,9 +20,10 @@ public class TabStateAdapter extends FragmentStateAdapter{
                 return new HomeFragment();
             case 1:
                 return new MapsFragment();
+            //case 2:
+            //    return new EventsFragment();
             case 2:
-                return new EventsFragment();
-            case 3:
+                //change to case 3 when adding events fragment
                 return new AboutFragment();
             default:
                 return null;

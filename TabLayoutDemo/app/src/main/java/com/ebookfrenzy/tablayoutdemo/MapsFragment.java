@@ -685,8 +685,8 @@ public class MapsFragment extends Fragment{
             deerGrove1 = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveOne)
-                            .title("Deer Grove East #1 (Shelter)")
-                            .snippet("Capacity: 300")
+                            .title("East Picnic Area #1 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon21));
 
             final LatLng deerGroveTwo = new LatLng(42.14324491562828, -88.0460323019405);
@@ -698,8 +698,8 @@ public class MapsFragment extends Fragment{
             deerGrove2 = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveTwo)
-                            .title("Deer Grove East #2 (Shelter)")
-                            .snippet("Capacity: 300")
+                            .title("East Picnic Area #2 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon22));
 
             final LatLng deerGroveThree = new LatLng(42.14291179469213, -88.04251514373345);
@@ -711,8 +711,8 @@ public class MapsFragment extends Fragment{
             deerGrove3 = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveThree)
-                            .title("Deer Grove East #3 (Shelter)")
-                            .snippet("Capacity: 300")
+                            .title("East Picnic Area #3 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon23));
 
             final LatLng deerGroveFour = new LatLng(42.14334932630808, -88.04031573237468);
@@ -724,8 +724,8 @@ public class MapsFragment extends Fragment{
             deerGrove4 = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveFour)
-                            .title("Deer Grove East #4 (Shelter)")
-                            .snippet("Capacity: 300")
+                            .title("East Picnic Area #4 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon24));
 
             final LatLng deerGroveOneW = new LatLng(42.141053629985485, -88.06736231190803);
@@ -737,8 +737,8 @@ public class MapsFragment extends Fragment{
             deerGrove1W = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveOneW)
-                            .title("Deer Grove #1 (Shelter)")
-                            .snippet("Capacity: 100")
+                            .title("West Picnic Area #1 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon25));
 
             final LatLng deerGroveThreeW = new LatLng(42.14259056305335, -88.06674695727276);
@@ -750,8 +750,8 @@ public class MapsFragment extends Fragment{
             deerGrove3W = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveThreeW)
-                            .title("Deer Grove #3")
-                            .snippet("Capacity: 100")
+                            .title("West Picnic Area #2")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon26));
 
             final LatLng deerGroveFourW = new LatLng(42.145952474075614, -88.06731373127894);
@@ -763,8 +763,8 @@ public class MapsFragment extends Fragment{
             deerGrove4W = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveFourW)
-                            .title("Deer Grove #4 (Shelter)")
-                            .snippet("Capacity: 150")
+                            .title("West Picnic Area #3 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon27));
 
             final LatLng deerGroveFiveW = new LatLng(42.14593262431453, -88.07384070759947);
@@ -776,8 +776,8 @@ public class MapsFragment extends Fragment{
             deerGrove5W = mMap.addMarker(
                     new MarkerOptions()
                             .position(deerGroveFiveW)
-                            .title("Deer Grove #5 (Shelter)")
-                            .snippet("Capacity: 300")
+                            .title("West Picnic Area #4 (Shelter)")
+                            .snippet("Capacity: 30")
                             .icon(smallMarkerIcon28));
 
             final LatLng entranceOne = new LatLng(42.13938675264347, -88.0431225379549);

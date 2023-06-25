@@ -1,6 +1,8 @@
 package com.ebookfrenzy.tablayoutdemo;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +78,7 @@ public class SignUpFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,8 +89,6 @@ public class SignUpFragment extends Fragment {
         Button btnSend = (Button) view.findViewById(R.id.btnSend);
         EditText email = view.findViewById(R.id.txtEmail);
         TextView displayEvent = view.findViewById(R.id.display);
-
-
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,59 +121,99 @@ public class SignUpFragment extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
 
-                    // here you set what you want to do when user clicks your button,
-                    // e.g. launch a new activity
-                    final String username = "raghus06@yahoo.com";
-                    final String password = "eqqkkevzohdkbaon";
+                String emailValid = email.getText().toString().trim();
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                String emailPattern2 = "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.+[a-zA-Z0-9._-]+\\.+[a-z]+";
 
-                    //String body = eventDisplayed;
-                    String body = displayed;
-
-
-                    EditText txtEmail = (EditText) view.findViewById(R.id.txtEmail);
-                    String email = txtEmail.getText().toString();
-
-                    Properties props = new Properties();
-                    props.put("mail.smtp.auth", "true");
-                    props.put("mail.smtp.ssl.enable", "true");
-                    props.put("mail.smtp.host", "smtp.mail.yahoo.com");
-                    props.put("mail.smtp.port", "465");
-
-                    Session session = Session.getInstance(props, new Authenticator(){
-                        protected PasswordAuthentication getPasswordAuthentication(){
-                            return new PasswordAuthentication(username, password);
-                        }
-                    });
-
-
+                if(emailValid.matches(emailPattern) || emailValid.matches(emailPattern2)){
                     try {
-                        Message message = new MimeMessage(session);
-                        message.setFrom(new InternetAddress(username));
-                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+                        // here you set what you want to do when user clicks your button,
+                        // e.g. launch a new activity
+
+                        //final String username = "raghus06@yahoo.com";
+                        //final String password = "eqqkkevzohdkbaon";
+
+                        //final String username = "raghus06@gmail.com";
+                        //final String password = "blhtfltjasbnuiyw";
+
+                        final String username = "deergroveevents@gmail.com";
+                        final String password = "dqmimytimwfxxypt";
 
 
-                        message.setSubject("Thank you for signing up!");
-                        message.setText(body);
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    Transport.send(message);//send(message);
-                                } catch (MessagingException e) {
-                                    e.printStackTrace();
-                                }
+                        //String body = eventDisplayed;
+                        String body = displayed;
+
+
+                        EditText txtEmail = (EditText) view.findViewById(R.id.txtEmail);
+                        String email = txtEmail.getText().toString();
+
+                        Properties props = new Properties();
+                        props.put("mail.smtp.auth", "true");
+                        props.put("mail.smtp.ssl.enable", "true");
+                        //props.put("mail.smtp.host", "smtp.mail.yahoo.com");
+                        //props.put("mail.smtp.port", "465");
+
+                        props.put("mail.smtp.host", "smtp.gmail.com");
+                        props.put("mail.smtp.port", "465");
+
+                        Session session = Session.getInstance(props, new Authenticator(){
+                            protected PasswordAuthentication getPasswordAuthentication(){
+                                return new PasswordAuthentication(username, password);
                             }
-                        }).start();
-                        Toast.makeText(getActivity().getApplicationContext(), "Email sent successfully.", Toast.LENGTH_LONG).show();
-                    } catch (MessagingException e) {
-                        throw new RuntimeException(e);
-                    }
+                        });
 
-                } catch (Exception ex) {
-                    String msg = ex.getMessage();
+
+                        try {
+                            Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(username));
+                            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+
+                            message.setSubject("Thank you for signing up!");
+                            message.setText(body);
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        Transport.send(message);
+                                    } catch (MessagingException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }).start();
+                            Toast.makeText(getActivity().getApplicationContext(), "Email sent successfully.", Toast.LENGTH_LONG).show();
+
+                            Message secondEmail = new MimeMessage(session);
+                            secondEmail.setFrom(new InternetAddress(username));
+                            secondEmail.setRecipients(Message.RecipientType.TO, InternetAddress.parse("arvind.kakanavaram@gmail.com"));
+                            secondEmail.setSubject("New Signup for Event");
+                            secondEmail.setText("A user has signed up for an event." + "\n\nEvent: " + body + "\n\nUser's Email: " + email);
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        Transport.send(secondEmail);
+                                    } catch (MessagingException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }).start();
+
+
+
+                        } catch (MessagingException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    } catch (Exception ex) {
+                        String msg = ex.getMessage();
+                    }
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         return view;
