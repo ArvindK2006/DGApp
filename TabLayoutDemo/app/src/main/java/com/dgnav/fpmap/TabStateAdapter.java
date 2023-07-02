@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.dgnav.fpmap;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;

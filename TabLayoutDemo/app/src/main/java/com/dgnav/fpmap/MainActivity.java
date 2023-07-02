@@ -1,19 +1,14 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.dgnav.fpmap;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.ebookfrenzy.tablayoutdemo.databinding.ActivityMainBinding;
+import com.dgnav.fpmap.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

@@ -1,10 +1,8 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.dgnav.fpmap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
 

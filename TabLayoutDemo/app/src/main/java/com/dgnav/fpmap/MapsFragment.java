@@ -1,6 +1,5 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.dgnav.fpmap;
 
-import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -34,7 +33,6 @@ import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

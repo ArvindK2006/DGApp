@@ -1,4 +1,4 @@
-package com.ebookfrenzy.tablayoutdemo;
+package com.dgnav.fpmap;
 
 public class CalEvent {
 
